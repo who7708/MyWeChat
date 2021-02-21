@@ -1,4 +1,4 @@
-高仿微信6.5.7（融云版）
+高仿微信6.5.7 fork from [LQRWeChat](https://github.com/GitLqr/LQRWeChat)
 ============
 
 ## 目录
