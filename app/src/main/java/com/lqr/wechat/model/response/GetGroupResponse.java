@@ -19,22 +19,22 @@ public class GetGroupResponse {
      * group : {"id":"pG4lQsHkY","name":"我的群","portraitUri":"","creatorId":"7w0UxC8IB","memberCount":7}
      */
 
-    private List<ResultEntity> result;
+    private List<ResultEntity> results;
 
     public void setCode(int code) {
         this.code = code;
     }
 
-    public void setResult(List<ResultEntity> result) {
-        this.result = result;
+    public void setResults(List<ResultEntity> results) {
+        this.results = results;
     }
 
     public int getCode() {
         return code;
     }
 
-    public List<ResultEntity> getResult() {
-        return result;
+    public List<ResultEntity> getResults() {
+        return results;
     }
 
     public static class ResultEntity {

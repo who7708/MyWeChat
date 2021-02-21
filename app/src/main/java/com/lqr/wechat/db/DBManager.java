@@ -34,7 +34,7 @@ import rx.schedulers.Schedulers;
 
 /**
  * @author Chris
- *  数据库管理器
+ * 数据库管理器
  */
 public class DBManager {
 
@@ -76,7 +76,8 @@ public class DBManager {
      */
     private void fetchFriends() {
         mHasFetchedFriends = false;
-        ApiRetrofit.getInstance().getAllUserRelationship()
+        Long userId = Long.valueOf(UserCache.getId());
+        ApiRetrofit.getInstance().getAllUserRelationship(userId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
                 .subscribe(userRelationshipResponse -> {
@@ -100,12 +101,13 @@ public class DBManager {
      */
     private void fetchGroups() {
         mHasFetchedGroups = false;
-        ApiRetrofit.getInstance().getGroups()
+        Long userId = Long.valueOf(UserCache.getId());
+        ApiRetrofit.getInstance().getGroups(userId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
                 .subscribe(getGroupResponse -> {
                     if (getGroupResponse != null && getGroupResponse.getCode() == 200) {
-                        List<GetGroupResponse.ResultEntity> list = getGroupResponse.getResult();
+                        List<GetGroupResponse.ResultEntity> list = getGroupResponse.getResults();
                         if (list != null && list.size() > 0) {
                             deleteGroups();
                             saveGroups(list);

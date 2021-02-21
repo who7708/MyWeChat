@@ -55,7 +55,8 @@ public class NewFriendAtPresenter extends BasePresenter<INewFriendAtView> {
     }
 
     private void loadData() {
-        ApiRetrofit.getInstance().getAllUserRelationship()
+        Long userId = Long.valueOf(UserCache.getId());
+        ApiRetrofit.getInstance().getAllUserRelationship(userId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(userRelationshipResponse -> {

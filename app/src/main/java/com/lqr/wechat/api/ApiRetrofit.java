@@ -177,8 +177,8 @@ public class ApiRetrofit extends BaseApiRetrofit {
         return mApi.sendFriendInvitation(getRequestBody(new FriendInvitationRequest(userid, addFriendMessage)));
     }
 
-    public Observable<UserRelationshipResponse> getAllUserRelationship() {
-        return mApi.getAllUserRelationship();
+    public Observable<UserRelationshipResponse> getAllUserRelationship(Long userId) {
+        return mApi.getAllUserRelationship(userId);
     }
 
     public Observable<GetFriendInfoByIDResponse> getFriendInfoByID(String userid) {
@@ -218,8 +218,8 @@ public class ApiRetrofit extends BaseApiRetrofit {
         return mApi.setGroupPortrait(getRequestBody(new SetGroupPortraitRequest(groupId, portraitUri)));
     }
 
-    public Observable<GetGroupResponse> getGroups() {
-        return mApi.getGroups();
+    public Observable<GetGroupResponse> getGroups(Long userId) {
+        return mApi.getGroups(userId);
     }
 
     public Observable<GetGroupInfoResponse> getGroupInfo(String groupId) {

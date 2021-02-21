@@ -111,8 +111,8 @@ public interface MyApi {
     Observable<FriendInvitationResponse> sendFriendInvitation(@Body RequestBody body);
 
     //获取发生过用户关系的列表
-    @GET("friendship/all")
-    Observable<UserRelationshipResponse> getAllUserRelationship();
+    @GET("friendship/{userId}/all")
+    Observable<UserRelationshipResponse> getAllUserRelationship(@Path("userId") Long userId);
 
     //根据userId去服务器查询好友信息
     @GET("friendship/{userid}/profile")
@@ -151,8 +151,8 @@ public interface MyApi {
     Observable<SetGroupPortraitResponse> setGroupPortrait(@Body RequestBody body);
 
     //获取当前用户所属群组列表
-    @GET("user/groups")
-    Observable<GetGroupResponse> getGroups();
+    @GET("user/{userId}/groups")
+    Observable<GetGroupResponse> getGroups(@Path("userId") Long userId);
 
     //根据 群组id 查询该群组信息   403 群组成员才能看
     @GET("group/{groupId}")
