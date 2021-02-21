@@ -15,7 +15,7 @@
         <attr name="rv_default_animator_open" format="boolean" />
     </declare-styleable>
 
-    <string name="app_name" translatable="false">LQRWeChat</string>
+    <string name="app_name" translatable="false">MyWeChat</string>
 
     <string name="error_code" translatable="false">异常码：</string>
     <string name="please_check_net" translatable="false">请检查网络</string>
