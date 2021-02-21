@@ -96,7 +96,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
     implementation 'com.squareup.okio:okio:3.0.0-alpha.1'
     implementation 'com.qiniu:qiniu-android-sdk:8.1.2'
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
     implementation 'com.bm.photoview:library:1.4.1'
     implementation 'androidx.multidex:multidex:2.0.1'
     //    implementation 'com.github.chrisbanes.photoview:library:1.2.3'
@@ -126,6 +125,9 @@ dependencies {
     // implementation files('libs/MobTools-2017.0322.0931.jar')
     // implementation files('libs/MobCommons-2017.0322.0931.jar')
     // implementation files('libs/volley-1.0.19.jar')
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
     implementation 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
