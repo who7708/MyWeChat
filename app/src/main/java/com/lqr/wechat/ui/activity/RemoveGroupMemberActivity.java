@@ -23,7 +23,7 @@ import com.lqr.wechat.util.UIUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import io.rong.imlib.model.UserInfo;
 
 /**
@@ -37,9 +37,9 @@ public class RemoveGroupMemberActivity extends BaseActivity {
     private List<GroupMember> mData = new ArrayList<>();
     private List<GroupMember> mSelectedData = new ArrayList<>();
 
-    @Bind(R.id.btnToolbarSend)
+    @BindView(R.id.btnToolbarSend)
     Button mBtnToolbarSend;
-    @Bind(R.id.rvMember)
+    @BindView(R.id.rvMember)
     LQRRecyclerView mRvMember;
     private LQRAdapterForRecyclerView<GroupMember> mAdapter;
 

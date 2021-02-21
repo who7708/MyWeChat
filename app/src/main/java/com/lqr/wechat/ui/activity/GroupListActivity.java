@@ -13,7 +13,7 @@ import com.lqr.wechat.ui.base.BaseActivity;
 import com.lqr.wechat.ui.presenter.GroupListAtPresenter;
 import com.lqr.wechat.ui.view.IGroupListAtView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @创建者 CSDN_LQR
@@ -21,9 +21,9 @@ import butterknife.Bind;
  */
 public class GroupListActivity extends BaseActivity<IGroupListAtView, GroupListAtPresenter> implements IGroupListAtView {
 
-    @Bind(R.id.llGroups)
+    @BindView(R.id.llGroups)
     LinearLayout mLlGroups;
-    @Bind(R.id.rvGroupList)
+    @BindView(R.id.rvGroupList)
     LQRRecyclerView mRvGroupList;
 
     @Override

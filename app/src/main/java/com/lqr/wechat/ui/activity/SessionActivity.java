@@ -46,7 +46,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 import io.rong.imlib.MessageTag;
@@ -75,45 +75,45 @@ public class SessionActivity extends BaseFragmentActivity<ISessionAtView, Sessio
     private boolean mIsFirst = false;
     private Conversation.ConversationType mConversationType = Conversation.ConversationType.PRIVATE;
 
-    @Bind(R.id.ibToolbarMore)
+    @BindView(R.id.ibToolbarMore)
     ImageButton mIbToolbarMore;
 
-    @Bind(R.id.llRoot)
+    @BindView(R.id.llRoot)
     LinearLayout mLlRoot;
-    @Bind(R.id.llContent)
+    @BindView(R.id.llContent)
     LinearLayout mLlContent;
-    @Bind(R.id.refreshLayout)
+    @BindView(R.id.refreshLayout)
     BGARefreshLayout mRefreshLayout;
-    @Bind(R.id.rvMsg)
+    @BindView(R.id.rvMsg)
     LQRRecyclerView mRvMsg;
 
-    @Bind(R.id.ivAudio)
+    @BindView(R.id.ivAudio)
     ImageView mIvAudio;
-    @Bind(R.id.btnAudio)
+    @BindView(R.id.btnAudio)
     Button mBtnAudio;
-    @Bind(R.id.etContent)
+    @BindView(R.id.etContent)
     EditText mEtContent;
-    @Bind(R.id.ivEmo)
+    @BindView(R.id.ivEmo)
     ImageView mIvEmo;
-    @Bind(R.id.ivMore)
+    @BindView(R.id.ivMore)
     ImageView mIvMore;
-    @Bind(R.id.btnSend)
+    @BindView(R.id.btnSend)
     Button mBtnSend;
 
-    @Bind(R.id.flEmotionView)
+    @BindView(R.id.flEmotionView)
     FrameLayout mFlEmotionView;
-    @Bind(R.id.elEmotion)
+    @BindView(R.id.elEmotion)
     EmotionLayout mElEmotion;
-    @Bind(R.id.llMore)
+    @BindView(R.id.llMore)
     LinearLayout mLlMore;
 
-    @Bind(R.id.rlAlbum)
+    @BindView(R.id.rlAlbum)
     RelativeLayout mRlAlbum;
-    @Bind(R.id.rlTakePhoto)
+    @BindView(R.id.rlTakePhoto)
     RelativeLayout mRlTakePhoto;
-    @Bind(R.id.rlLocation)
+    @BindView(R.id.rlLocation)
     RelativeLayout mRlLocation;
-    @Bind(R.id.rlRedPacket)
+    @BindView(R.id.rlRedPacket)
     RelativeLayout mRlRedPacket;
 
     private EmotionKeyboard mEmotionKeyboard;

@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
-import android.support.v4.util.LruCache;
+import androidx.collection.LruCache;
 import android.widget.ImageView;
 
 /**

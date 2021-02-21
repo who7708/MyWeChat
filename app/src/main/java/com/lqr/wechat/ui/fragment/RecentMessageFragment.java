@@ -13,7 +13,7 @@ import com.lqr.wechat.ui.base.BaseFragment;
 import com.lqr.wechat.ui.presenter.RecentMessageFgPresenter;
 import com.lqr.wechat.ui.view.IRecentMessageFgView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @创建者 CSDN_LQR
@@ -22,7 +22,7 @@ import butterknife.Bind;
 public class RecentMessageFragment extends BaseFragment<IRecentMessageFgView, RecentMessageFgPresenter> implements IRecentMessageFgView {
 
     private boolean isFirst = true;
-    @Bind(R.id.rvRecentMessage)
+    @BindView(R.id.rvRecentMessage)
     LQRRecyclerView mRvRecentMessage;
 
     @Override

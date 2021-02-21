@@ -26,7 +26,7 @@ import com.lqr.wechat.widget.QuickIndexBar;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @创建者 CSDN_LQR
@@ -34,11 +34,11 @@ import butterknife.Bind;
  */
 public class ContactsFragment extends BaseFragment<IContactsFgView, ContactsFgPresenter> implements IContactsFgView {
 
-    @Bind(R.id.rvContacts)
+    @BindView(R.id.rvContacts)
     LQRRecyclerView mRvContacts;
-    @Bind(R.id.qib)
+    @BindView(R.id.qib)
     QuickIndexBar mQib;
-    @Bind(R.id.tvLetter)
+    @BindView(R.id.tvLetter)
     TextView mTvLetter;
 
     private View mHeaderView;

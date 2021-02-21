@@ -23,7 +23,7 @@ import com.lqr.wechat.util.LogUtils;
 import com.lqr.wechat.util.UIUtils;
 import com.lqr.wechat.widget.CustomDialog;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder;
 import io.rong.imlib.model.UserInfo;
 import rx.Observable;
@@ -38,27 +38,27 @@ public class MeFragment extends BaseFragment<IMeFgView, MeFgPresenter> implement
 
     private CustomDialog mQrCardDialog;
 
-    @Bind(R.id.llMyInfo)
+    @BindView(R.id.llMyInfo)
     LinearLayout mLlMyInfo;
-    @Bind(R.id.ivHeader)
+    @BindView(R.id.ivHeader)
     ImageView mIvHeader;
-    @Bind(R.id.tvName)
+    @BindView(R.id.tvName)
     TextView mTvName;
-    @Bind(R.id.tvAccount)
+    @BindView(R.id.tvAccount)
     TextView mTvAccount;
-    @Bind(R.id.ivQRCordCard)
+    @BindView(R.id.ivQRCordCard)
     ImageView mIvQRCordCard;
 
-    @Bind(R.id.oivAlbum)
+    @BindView(R.id.oivAlbum)
     OptionItemView mOivAlbum;
-    @Bind(R.id.oivCollection)
+    @BindView(R.id.oivCollection)
     OptionItemView mOivCollection;
-    @Bind(R.id.oivWallet)
+    @BindView(R.id.oivWallet)
     OptionItemView mOivWallet;
-    @Bind(R.id.oivCardPaket)
+    @BindView(R.id.oivCardPaket)
     OptionItemView mOivCardPaket;
 
-    @Bind(R.id.oivSetting)
+    @BindView(R.id.oivSetting)
     OptionItemView mOivSetting;
 
     @Override

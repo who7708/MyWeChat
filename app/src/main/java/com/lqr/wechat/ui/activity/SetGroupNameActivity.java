@@ -19,7 +19,7 @@ import com.lqr.wechat.ui.base.BasePresenter;
 import com.lqr.wechat.util.LogUtils;
 import com.lqr.wechat.util.UIUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -32,9 +32,9 @@ public class SetGroupNameActivity extends BaseActivity {
 
     private String mGroupId;
 
-    @Bind(R.id.btnToolbarSend)
+    @BindView(R.id.btnToolbarSend)
     Button mBtnToolbarSend;
-    @Bind(R.id.etName)
+    @BindView(R.id.etName)
     EditText mEtName;
 
     @Override

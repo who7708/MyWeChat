@@ -11,7 +11,7 @@ import com.lqr.wechat.ui.base.BaseActivity;
 import com.lqr.wechat.ui.base.BasePresenter;
 import com.lqr.wechat.widget.CustomDialog;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import io.rong.imlib.RongIMClient;
 
 /**
@@ -22,11 +22,11 @@ public class SettingActivity extends BaseActivity {
 
     private View mExitView;
 
-    @Bind(R.id.oivAbout)
+    @BindView(R.id.oivAbout)
     OptionItemView mOivAbout;
-    @Bind(R.id.oivHelpFeedback)
+    @BindView(R.id.oivHelpFeedback)
     OptionItemView mOivHelpFeedback;
-    @Bind(R.id.oivExit)
+    @BindView(R.id.oivExit)
     OptionItemView mOivExit;
     private CustomDialog mExitDialog;
 

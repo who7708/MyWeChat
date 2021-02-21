@@ -14,7 +14,7 @@ import com.lqr.wechat.ui.base.BaseActivity;
 import com.lqr.wechat.ui.base.BasePresenter;
 import com.lqr.wechat.util.UIUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import kr.co.namee.permissiongen.PermissionGen;
 
 /**
@@ -23,11 +23,11 @@ import kr.co.namee.permissiongen.PermissionGen;
  */
 public class SplashActivity extends BaseActivity {
 
-    @Bind(R.id.rlButton)
+    @BindView(R.id.rlButton)
     RelativeLayout mRlButton;
-    @Bind(R.id.btnLogin)
+    @BindView(R.id.btnLogin)
     Button mBtnLogin;
-    @Bind(R.id.btnRegister)
+    @BindView(R.id.btnRegister)
     Button mBtnRegister;
 
     @Override

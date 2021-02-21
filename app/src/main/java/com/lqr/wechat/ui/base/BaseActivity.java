@@ -4,9 +4,9 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import com.google.android.material.appbar.AppBarLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +22,7 @@ import com.lqr.wechat.util.UIUtils;
 import com.lqr.wechat.widget.CustomDialog;
 import com.zhy.autolayout.AutoLinearLayout;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.drakeet.materialdialog.MaterialDialog;
 
@@ -33,21 +33,21 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
     private MaterialDialog mMaterialDialog;
 
     //以下是所有Activity中可能会出现的控件
-    @Bind(R.id.appBar)
+    @BindView(R.id.appBar)
     protected AppBarLayout mAppBar;
-    //    @Bind(R.id.toolbar)
+    //    @BindView(R.id.toolbar)
     //    protected Toolbar mToolbar;
-    @Bind(R.id.flToolbar)
+    @BindView(R.id.flToolbar)
     public FrameLayout mToolbar;
-    @Bind(R.id.ivToolbarNavigation)
+    @BindView(R.id.ivToolbarNavigation)
     public ImageView mToolbarNavigation;
-    @Bind(R.id.vToolbarDivision)
+    @BindView(R.id.vToolbarDivision)
     public View mToolbarDivision;
-    @Bind(R.id.llToolbarTitle)
+    @BindView(R.id.llToolbarTitle)
     public AutoLinearLayout mLlToolbarTitle;
-    @Bind(R.id.tvToolbarTitle)
+    @BindView(R.id.tvToolbarTitle)
     public TextView mToolbarTitle;
-    @Bind(R.id.tvToolbarSubTitle)
+    @BindView(R.id.tvToolbarSubTitle)
     public TextView mToolbarSubTitle;
 
     @Override

@@ -30,7 +30,7 @@ import com.lqr.wechat.ui.base.BasePresenter;
 import com.lqr.wechat.util.LogUtils;
 import com.lqr.wechat.util.UIUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
@@ -46,43 +46,43 @@ public class UserInfoActivity extends BaseActivity {
 
     UserInfo mUserInfo;
 
-    @Bind(R.id.ibToolbarMore)
+    @BindView(R.id.ibToolbarMore)
     ImageButton mIbToolbarMore;
 
-    @Bind(R.id.ivHeader)
+    @BindView(R.id.ivHeader)
     ImageView mIvHeader;
-    @Bind(R.id.tvName)
+    @BindView(R.id.tvName)
     TextView mTvName;
-    @Bind(R.id.ivGender)
+    @BindView(R.id.ivGender)
     ImageView mIvGender;
-    @Bind(R.id.tvAccount)
+    @BindView(R.id.tvAccount)
     TextView mTvAccount;
-    @Bind(R.id.tvNickName)
+    @BindView(R.id.tvNickName)
     TextView mTvNickName;
-    @Bind(R.id.tvArea)
+    @BindView(R.id.tvArea)
     TextView mTvArea;
-    @Bind(R.id.tvSignature)
+    @BindView(R.id.tvSignature)
     TextView mTvSignature;
 
-    @Bind(R.id.oivAliasAndTag)
+    @BindView(R.id.oivAliasAndTag)
     OptionItemView mOivAliasAndTag;
-    @Bind(R.id.llArea)
+    @BindView(R.id.llArea)
     LinearLayout mLlArea;
-    @Bind(R.id.llSignature)
+    @BindView(R.id.llSignature)
     LinearLayout mLlSignature;
 
-    @Bind(R.id.btnCheat)
+    @BindView(R.id.btnCheat)
     Button mBtnCheat;
-    @Bind(R.id.btnAddToContact)
+    @BindView(R.id.btnAddToContact)
     Button mBtnAddToContact;
 
-    @Bind(R.id.rlMenu)
+    @BindView(R.id.rlMenu)
     RelativeLayout mRlMenu;
-    @Bind(R.id.svMenu)
+    @BindView(R.id.svMenu)
     ScrollView mSvMenu;
-    @Bind(R.id.oivAlias)
+    @BindView(R.id.oivAlias)
     OptionItemView mOivAlias;
-    @Bind(R.id.oivDelete)
+    @BindView(R.id.oivDelete)
     OptionItemView mOivDelete;
     private Friend mFriend;
 

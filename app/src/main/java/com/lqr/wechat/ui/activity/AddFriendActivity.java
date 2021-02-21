@@ -10,7 +10,7 @@ import com.lqr.wechat.ui.presenter.AddFriendAtPresenter;
 import com.lqr.wechat.ui.view.IAddFriendAtView;
 import com.lqr.wechat.util.UIUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @创建者 CSDN_LQR
@@ -19,9 +19,9 @@ import butterknife.Bind;
 
 public class AddFriendActivity extends BaseActivity<IAddFriendAtView, AddFriendAtPresenter> implements IAddFriendAtView {
 
-    @Bind(R.id.llSearchUser)
+    @BindView(R.id.llSearchUser)
     LinearLayout mLlSearchUser;
-    @Bind(R.id.tvAccount)
+    @BindView(R.id.tvAccount)
     TextView mTvAccount;
 
     @Override

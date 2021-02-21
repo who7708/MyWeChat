@@ -19,7 +19,7 @@ import com.lqr.wechat.ui.view.ISessionInfoAtView;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 
@@ -40,26 +40,26 @@ public class SessionInfoActivity extends BaseActivity<ISessionInfoAtView, Sessio
     private Conversation.ConversationType mConversationType = Conversation.ConversationType.PRIVATE;
     private int mSessionType;
 
-    @Bind(R.id.llGroupPart1)
+    @BindView(R.id.llGroupPart1)
     LinearLayout mLlGroupPart1;
-    @Bind(R.id.llGroupPart2)
+    @BindView(R.id.llGroupPart2)
     LinearLayout mLlGroupPart2;
 
-    @Bind(R.id.rvMember)
+    @BindView(R.id.rvMember)
     LQRRecyclerView mRvMember;
 
-    @Bind(R.id.oivGroupName)
+    @BindView(R.id.oivGroupName)
     OptionItemView mOivGroupName;
-    @Bind(R.id.oivQRCordCard)
+    @BindView(R.id.oivQRCordCard)
     OptionItemView mOivQRCordCard;
-    @Bind(R.id.oivNickNameInGroup)
+    @BindView(R.id.oivNickNameInGroup)
     OptionItemView mOivNickNameInGroup;
-    @Bind(R.id.oivClearMsgRecord)
+    @BindView(R.id.oivClearMsgRecord)
     OptionItemView mOivClearMsgRecord;
 
-    @Bind(R.id.sbToTop)
+    @BindView(R.id.sbToTop)
     SwitchButton mSbToTop;
-    @Bind(R.id.btnQuit)
+    @BindView(R.id.btnQuit)
     Button mBtnQuit;
 
     @Override

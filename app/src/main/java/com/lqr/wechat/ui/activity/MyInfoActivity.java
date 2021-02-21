@@ -19,8 +19,8 @@ import com.lqr.wechat.ui.view.IMyInfoAtView;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
 
+import butterknife.BindView;
 
 /**
  * @创建者 CSDN_LQR
@@ -30,15 +30,15 @@ public class MyInfoActivity extends BaseActivity<IMyInfoAtView, MyInfoAtPresente
 
     public static final int REQUEST_IMAGE_PICKER = 1000;
 
-    @Bind(R.id.llHeader)
+    @BindView(R.id.llHeader)
     LinearLayout mLlHeader;
-    @Bind(R.id.ivHeader)
+    @BindView(R.id.ivHeader)
     ImageView mIvHeader;
-    @Bind(R.id.oivName)
+    @BindView(R.id.oivName)
     OptionItemView mOivName;
-    @Bind(R.id.oivAccount)
+    @BindView(R.id.oivAccount)
     OptionItemView mOivAccount;
-    @Bind(R.id.oivQRCodeCard)
+    @BindView(R.id.oivQRCodeCard)
     OptionItemView mOivQRCodeCard;
 
     @Override

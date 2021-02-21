@@ -13,7 +13,7 @@ import com.lqr.wechat.ui.base.BaseActivity;
 import com.lqr.wechat.ui.presenter.SearchUserAtPresenter;
 import com.lqr.wechat.ui.view.ISearchUserAtView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @创建者 CSDN_LQR
@@ -21,16 +21,16 @@ import butterknife.Bind;
  */
 public class SearchUserActivity extends BaseActivity<ISearchUserAtView, SearchUserAtPresenter> implements ISearchUserAtView {
 
-    @Bind(R.id.llToolbarSearch)
+    @BindView(R.id.llToolbarSearch)
     LinearLayout mLlToolbarSearch;
-    @Bind(R.id.etSearchContent)
+    @BindView(R.id.etSearchContent)
     EditText mEtSearchContent;
 
-    @Bind(R.id.rlNoResultTip)
+    @BindView(R.id.rlNoResultTip)
     RelativeLayout mRlNoResultTip;
-    @Bind(R.id.llSearch)
+    @BindView(R.id.llSearch)
     LinearLayout mLlSearch;
-    @Bind(R.id.tvMsg)
+    @BindView(R.id.tvMsg)
     TextView mTvMsg;
 
     @Override

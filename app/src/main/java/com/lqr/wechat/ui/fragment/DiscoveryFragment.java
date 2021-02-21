@@ -9,7 +9,7 @@ import com.lqr.wechat.ui.base.BaseFragment;
 import com.lqr.wechat.ui.presenter.DiscoveryFgPresenter;
 import com.lqr.wechat.ui.view.IDiscoveryFgView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @创建者 CSDN_LQR
@@ -17,11 +17,11 @@ import butterknife.Bind;
  */
 public class DiscoveryFragment extends BaseFragment<IDiscoveryFgView, DiscoveryFgPresenter> implements IDiscoveryFgView {
 
-    @Bind(R.id.oivScan)
+    @BindView(R.id.oivScan)
     OptionItemView mOivScan;
-    @Bind(R.id.oivShop)
+    @BindView(R.id.oivShop)
     OptionItemView mOivShop;
-    @Bind(R.id.oivGame)
+    @BindView(R.id.oivGame)
     OptionItemView mOivGame;
 
     @Override

@@ -18,7 +18,7 @@ import com.lqr.wechat.ui.base.BasePresenter;
 import com.lqr.wechat.util.LogUtils;
 import com.lqr.wechat.util.UIUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import io.rong.imlib.model.UserInfo;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -29,9 +29,9 @@ import rx.schedulers.Schedulers;
  */
 public class ChangeMyNameActivity extends BaseActivity {
 
-    @Bind(R.id.btnToolbarSend)
+    @BindView(R.id.btnToolbarSend)
     Button mBtnToolbarSend;
-    @Bind(R.id.etName)
+    @BindView(R.id.etName)
     EditText mEtName;
 
     @Override

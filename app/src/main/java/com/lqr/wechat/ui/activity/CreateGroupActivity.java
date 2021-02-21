@@ -19,7 +19,7 @@ import com.lqr.wechat.widget.QuickIndexBar;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @创建者 CSDN_LQR
@@ -29,20 +29,20 @@ public class CreateGroupActivity extends BaseActivity<ICreateGroupAtView, Create
 
     public ArrayList<String> mSelectedTeamMemberAccounts;
 
-    @Bind(R.id.btnToolbarSend)
+    @BindView(R.id.btnToolbarSend)
     Button mBtnToolbarSend;
 
-    @Bind(R.id.rvSelectedContacts)
+    @BindView(R.id.rvSelectedContacts)
     LQRRecyclerView mRvSelectedContacts;
-    @Bind(R.id.etKey)
+    @BindView(R.id.etKey)
     EditText mEtKey;
 
     private View mHeaderView;
-    @Bind(R.id.rvContacts)
+    @BindView(R.id.rvContacts)
     LQRRecyclerView mRvContacts;
-    @Bind(R.id.qib)
+    @BindView(R.id.qib)
     QuickIndexBar mQib;
-    @Bind(R.id.tvLetter)
+    @BindView(R.id.tvLetter)
     TextView mTvLetter;
 
     @Override

@@ -95,7 +95,7 @@ public class MyApp extends BaseApp implements RongIMClient.OnReceiveMessageListe
         //初始化仿微信控件ImagePicker
         initImagePicker();
         //初始化表情控件
-        LQREmotionKit.init(this, (context, path, imageView) -> Glide.with(context).load(path).centerCrop().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imageView));
+        LQREmotionKit.init(this, (context, path, imageView) -> Glide.with(context).load(path).centerCrop().diskCacheStrategy(DiskCacheStrategy.DATA).into(imageView));
         //初始化ShareSDK
         ShareSDK.initSDK(getContext());
     }

@@ -11,7 +11,7 @@ import com.lqr.wechat.ui.presenter.NewFriendAtPresenter;
 import com.lqr.wechat.ui.view.INewFriendAtView;
 import com.lqr.wechat.util.UIUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @创建者 CSDN_LQR
@@ -20,16 +20,16 @@ import butterknife.Bind;
 
 public class NewFriendActivity extends BaseActivity<INewFriendAtView, NewFriendAtPresenter> implements INewFriendAtView {
 
-    @Bind(R.id.llToolbarAddFriend)
+    @BindView(R.id.llToolbarAddFriend)
     LinearLayout mLlToolbarAddFriend;
-    @Bind(R.id.tvToolbarAddFriend)
+    @BindView(R.id.tvToolbarAddFriend)
     TextView mTvToolbarAddFriend;
 
-    @Bind(R.id.llNoNewFriend)
+    @BindView(R.id.llNoNewFriend)
     LinearLayout mLlNoNewFriend;
-    @Bind(R.id.llHasNewFriend)
+    @BindView(R.id.llHasNewFriend)
     LinearLayout mLlHasNewFriend;
-    @Bind(R.id.rvNewFriend)
+    @BindView(R.id.rvNewFriend)
     LQRRecyclerView mRvNewFriend;
 
     @Override

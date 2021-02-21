@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -27,70 +27,70 @@ import com.lqr.wechat.util.UIUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> implements ViewPager.OnPageChangeListener, IMainAtView {
 
     private List<BaseFragment> mFragmentList = new ArrayList<>(4);
 
-    @Bind(R.id.ibAddMenu)
+    @BindView(R.id.ibAddMenu)
     ImageButton mIbAddMenu;
-    @Bind(R.id.vpContent)
+    @BindView(R.id.vpContent)
     ViewPager mVpContent;
 
     //底部
-    @Bind(R.id.llMessage)
+    @BindView(R.id.llMessage)
     LinearLayout mLlMessage;
-    @Bind(R.id.tvMessageNormal)
+    @BindView(R.id.tvMessageNormal)
     TextView mTvMessageNormal;
-    @Bind(R.id.tvMessagePress)
+    @BindView(R.id.tvMessagePress)
     TextView mTvMessagePress;
-    @Bind(R.id.tvMessageTextNormal)
+    @BindView(R.id.tvMessageTextNormal)
     TextView mTvMessageTextNormal;
-    @Bind(R.id.tvMessageTextPress)
+    @BindView(R.id.tvMessageTextPress)
     TextView mTvMessageTextPress;
-    @Bind(R.id.tvMessageCount)
+    @BindView(R.id.tvMessageCount)
     public TextView mTvMessageCount;
 
-    @Bind(R.id.llContacts)
+    @BindView(R.id.llContacts)
     LinearLayout mLlContacts;
-    @Bind(R.id.tvContactsNormal)
+    @BindView(R.id.tvContactsNormal)
     TextView mTvContactsNormal;
-    @Bind(R.id.tvContactsPress)
+    @BindView(R.id.tvContactsPress)
     TextView mTvContactsPress;
-    @Bind(R.id.tvContactsTextNormal)
+    @BindView(R.id.tvContactsTextNormal)
     TextView mTvContactsTextNormal;
-    @Bind(R.id.tvContactsTextPress)
+    @BindView(R.id.tvContactsTextPress)
     TextView mTvContactsTextPress;
-    @Bind(R.id.tvContactCount)
+    @BindView(R.id.tvContactCount)
     public TextView mTvContactCount;
-    @Bind(R.id.tvContactRedDot)
+    @BindView(R.id.tvContactRedDot)
     public TextView mTvContactRedDot;
 
-    @Bind(R.id.llDiscovery)
+    @BindView(R.id.llDiscovery)
     LinearLayout mLlDiscovery;
-    @Bind(R.id.tvDiscoveryNormal)
+    @BindView(R.id.tvDiscoveryNormal)
     TextView mTvDiscoveryNormal;
-    @Bind(R.id.tvDiscoveryPress)
+    @BindView(R.id.tvDiscoveryPress)
     TextView mTvDiscoveryPress;
-    @Bind(R.id.tvDiscoveryTextNormal)
+    @BindView(R.id.tvDiscoveryTextNormal)
     TextView mTvDiscoveryTextNormal;
-    @Bind(R.id.tvDiscoveryTextPress)
+    @BindView(R.id.tvDiscoveryTextPress)
     TextView mTvDiscoveryTextPress;
-    @Bind(R.id.tvDiscoveryCount)
+    @BindView(R.id.tvDiscoveryCount)
     public TextView mTvDiscoveryCount;
 
-    @Bind(R.id.llMe)
+    @BindView(R.id.llMe)
     LinearLayout mLlMe;
-    @Bind(R.id.tvMeNormal)
+    @BindView(R.id.tvMeNormal)
     TextView mTvMeNormal;
-    @Bind(R.id.tvMePress)
+    @BindView(R.id.tvMePress)
     TextView mTvMePress;
-    @Bind(R.id.tvMeTextNormal)
+    @BindView(R.id.tvMeTextNormal)
     TextView mTvMeTextNormal;
-    @Bind(R.id.tvMeTextPress)
+    @BindView(R.id.tvMeTextPress)
     TextView mTvMeTextPress;
-    @Bind(R.id.tvMeCount)
+    @BindView(R.id.tvMeCount)
     public TextView mTvMeCount;
 
     @Override

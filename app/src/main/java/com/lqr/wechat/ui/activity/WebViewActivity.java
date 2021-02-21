@@ -16,7 +16,7 @@ import com.lqr.wechat.ui.base.BaseActivity;
 import com.lqr.wechat.ui.base.BasePresenter;
 import com.lqr.wechat.widget.ProgressWebView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
@@ -33,9 +33,9 @@ public class WebViewActivity extends BaseActivity {
 
     private boolean isLoading = false;
 
-    @Bind(R.id.ibToolbarMore)
+    @BindView(R.id.ibToolbarMore)
     ImageButton mIbToolbarMore;
-    @Bind(R.id.webview)
+    @BindView(R.id.webview)
     public ProgressWebView mWebView;
 
     @Override

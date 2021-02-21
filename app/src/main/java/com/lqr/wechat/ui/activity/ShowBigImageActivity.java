@@ -28,7 +28,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import okhttp3.ResponseBody;
 import rx.schedulers.Schedulers;
 
@@ -40,11 +40,11 @@ public class ShowBigImageActivity extends BaseActivity {
 
     private String mUrl;
 
-    @Bind(R.id.ibToolbarMore)
+    @BindView(R.id.ibToolbarMore)
     ImageButton mIbToolbarMore;
-    @Bind(R.id.pv)
+    @BindView(R.id.pv)
     PhotoView mPv;
-    @Bind(R.id.pb)
+    @BindView(R.id.pb)
     ProgressBar mPb;
     private FrameLayout mView;
     private PopupWindow mPopupWindow;

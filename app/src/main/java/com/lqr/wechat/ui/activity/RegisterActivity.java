@@ -15,35 +15,35 @@ import com.lqr.wechat.ui.presenter.RegisterAtPresenter;
 import com.lqr.wechat.ui.view.IRegisterAtView;
 import com.lqr.wechat.util.UIUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class RegisterActivity extends BaseActivity<IRegisterAtView, RegisterAtPresenter> implements IRegisterAtView {
 
-    @Bind(R.id.etNick)
+    @BindView(R.id.etNick)
     EditText mEtNick;
-    @Bind(R.id.vLineNick)
+    @BindView(R.id.vLineNick)
     View mVLineNick;
 
-    @Bind(R.id.etPhone)
+    @BindView(R.id.etPhone)
     EditText mEtPhone;
-    @Bind(R.id.vLinePhone)
+    @BindView(R.id.vLinePhone)
     View mVLinePhone;
 
-    @Bind(R.id.etPwd)
+    @BindView(R.id.etPwd)
     EditText mEtPwd;
-    @Bind(R.id.ivSeePwd)
+    @BindView(R.id.ivSeePwd)
     ImageView mIvSeePwd;
-    @Bind(R.id.vLinePwd)
+    @BindView(R.id.vLinePwd)
     View mVLinePwd;
 
-    @Bind(R.id.etVerifyCode)
+    @BindView(R.id.etVerifyCode)
     EditText mEtVerifyCode;
-    @Bind(R.id.btnSendCode)
+    @BindView(R.id.btnSendCode)
     Button mBtnSendCode;
-    @Bind(R.id.vLineVertifyCode)
+    @BindView(R.id.vLineVertifyCode)
     View mVLineVertifyCode;
 
-    @Bind(R.id.btnRegister)
+    @BindView(R.id.btnRegister)
     Button mBtnRegister;
 
     TextWatcher watcher = new TextWatcher() {

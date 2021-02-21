@@ -15,7 +15,7 @@ import com.lqr.wechat.ui.presenter.LoginAtPresenter;
 import com.lqr.wechat.ui.view.ILoginAtView;
 import com.lqr.wechat.util.UIUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @创建者 CSDN_LQR
@@ -23,24 +23,24 @@ import butterknife.Bind;
  */
 public class LoginActivity extends BaseActivity<ILoginAtView, LoginAtPresenter> implements ILoginAtView {
 
-    @Bind(R.id.ibAddMenu)
+    @BindView(R.id.ibAddMenu)
     ImageButton mIbAddMenu;
 
-    @Bind(R.id.etPhone)
+    @BindView(R.id.etPhone)
     EditText mEtPhone;
-    @Bind(R.id.vLinePhone)
+    @BindView(R.id.vLinePhone)
     View mVLinePhone;
 
-    @Bind(R.id.etPwd)
+    @BindView(R.id.etPwd)
     EditText mEtPwd;
-    @Bind(R.id.vLinePwd)
+    @BindView(R.id.vLinePwd)
     View mVLinePwd;
 
-    @Bind(R.id.tvProblems)
+    @BindView(R.id.tvProblems)
     TextView mTvProblems;
-    @Bind(R.id.btnLogin)
+    @BindView(R.id.btnLogin)
     Button mBtnLogin;
-    @Bind(R.id.tvOtherLogin)
+    @BindView(R.id.tvOtherLogin)
     TextView mTvOtherLogin;
 
     TextWatcher watcher = new TextWatcher() {

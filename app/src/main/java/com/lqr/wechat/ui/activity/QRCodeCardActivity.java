@@ -21,7 +21,7 @@ import com.lqr.wechat.util.UIUtils;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder;
 import io.rong.imlib.model.UserInfo;
 import rx.Observable;
@@ -35,15 +35,15 @@ public class QRCodeCardActivity extends BaseActivity {
     private UserInfo mUserInfo;
     private String mGroupId;
 
-    @Bind(R.id.ivHeader)
+    @BindView(R.id.ivHeader)
     ImageView mIvHeader;
-    @Bind(R.id.ngiv)
+    @BindView(R.id.ngiv)
     LQRNineGridImageView mNgiv;
-    @Bind(R.id.tvName)
+    @BindView(R.id.tvName)
     TextView mTvName;
-    @Bind(ivCard)
+    @BindView(ivCard)
     ImageView mIvCard;
-    @Bind(R.id.tvTip)
+    @BindView(R.id.tvTip)
     TextView mTvTip;
 
     @Override

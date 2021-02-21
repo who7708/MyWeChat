@@ -35,7 +35,7 @@ import com.lqr.wechat.util.UIUtils;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import cn.bingoogolapple.qrcode.core.QRCodeView;
 import cn.bingoogolapple.qrcode.zxing.QRCodeDecoder;
 import cn.bingoogolapple.qrcode.zxing.ZXingView;
@@ -52,35 +52,35 @@ public class ScanActivity extends BaseActivity<IScanAtView, ScanAtPresenter> imp
 
     public static final int IMAGE_PICKER = 100;
 
-    @Bind(R.id.ibToolbarMore)
+    @BindView(R.id.ibToolbarMore)
     ImageButton mIbToolbarMore;
-    @Bind(R.id.zxingview)
+    @BindView(R.id.zxingview)
     ZXingView mZxingview;
 
-    @Bind(R.id.llSaoma)
+    @BindView(R.id.llSaoma)
     LinearLayout mLlSaoma;
-    @Bind(R.id.llFengmian)
+    @BindView(R.id.llFengmian)
     LinearLayout mLlFengmian;
-    @Bind(R.id.llJiejing)
+    @BindView(R.id.llJiejing)
     LinearLayout mLlJiejing;
-    @Bind(R.id.llFanyi)
+    @BindView(R.id.llFanyi)
     LinearLayout mLlFanyi;
 
-    @Bind(R.id.ivSaomaNormal)
+    @BindView(R.id.ivSaomaNormal)
     ImageView mIvSaomaNormal;
-    @Bind(R.id.ivSaomaPress)
+    @BindView(R.id.ivSaomaPress)
     ImageView mIvSaomaPress;
-    @Bind(R.id.ivFengmianNormal)
+    @BindView(R.id.ivFengmianNormal)
     ImageView mIvFengmianNormal;
-    @Bind(R.id.ivFengmianPress)
+    @BindView(R.id.ivFengmianPress)
     ImageView mIvFengmianPress;
-    @Bind(R.id.ivJiejingNormal)
+    @BindView(R.id.ivJiejingNormal)
     ImageView mIvJiejingNormal;
-    @Bind(R.id.ivJiejingPress)
+    @BindView(R.id.ivJiejingPress)
     ImageView mIvJiejingPress;
-    @Bind(R.id.ivFanyiNormal)
+    @BindView(R.id.ivFanyiNormal)
     ImageView mIvFanyiNormal;
-    @Bind(R.id.ivFanyiPress)
+    @BindView(R.id.ivFanyiPress)
     ImageView mIvFanyiPress;
     private FrameLayout mView;
     private PopupWindow mPopupWindow;

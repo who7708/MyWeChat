@@ -19,7 +19,7 @@ import com.lqr.wechat.util.LogUtils;
 import com.lqr.wechat.util.PinyinUtils;
 import com.lqr.wechat.util.UIUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -33,9 +33,9 @@ public class SetAliasActivity extends BaseActivity {
     private String mFriendId;
     private Friend mFriend;
 
-    @Bind(R.id.btnToolbarSend)
+    @BindView(R.id.btnToolbarSend)
     Button mBtnToolbarSend;
-    @Bind(R.id.etAlias)
+    @BindView(R.id.etAlias)
     EditText mEtAlias;
 
     @Override

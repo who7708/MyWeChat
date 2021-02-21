@@ -11,7 +11,7 @@ import com.lqr.wechat.ui.base.BaseActivity;
 import com.lqr.wechat.ui.presenter.PostScriptAtPresenter;
 import com.lqr.wechat.ui.view.IPostScriptAtView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @创建者 CSDN_LQR
@@ -19,12 +19,12 @@ import butterknife.Bind;
  */
 public class PostScriptActivity extends BaseActivity<IPostScriptAtView, PostScriptAtPresenter> implements IPostScriptAtView {
 
-    @Bind(R.id.btnToolbarSend)
+    @BindView(R.id.btnToolbarSend)
     Button mBtnToolbarSend;
 
-    @Bind(R.id.etMsg)
+    @BindView(R.id.etMsg)
     EditText mEtMsg;
-    @Bind(R.id.ibClear)
+    @BindView(R.id.ibClear)
     ImageButton mIbClear;
     private String mUserId;
 
