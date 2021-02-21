@@ -1,12 +1,17 @@
 package com.lqr.wechat.api.base;
 
+import android.text.TextUtils;
+
 import com.lqr.wechat.api.base.persistentcookiejar.ClearableCookieJar;
 import com.lqr.wechat.api.base.persistentcookiejar.PersistentCookieJar;
 import com.lqr.wechat.api.base.persistentcookiejar.cache.SetCookieCache;
 import com.lqr.wechat.api.base.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 import com.lqr.wechat.app.MyApp;
+import com.lqr.wechat.model.cache.UserCache;
 import com.lqr.wechat.util.LogUtils;
 import com.lqr.wechat.util.NetUtils;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +27,7 @@ import okhttp3.ResponseBody;
 
 /**
  * @author Chris
- *  配置Retrofit（配置网络缓存cache、配置持久cookie免登录）
+ * 配置Retrofit（配置网络缓存cache、配置持久cookie免登录）
  */
 
 public class BaseApiRetrofit {
@@ -51,10 +56,15 @@ public class BaseApiRetrofit {
 
         //OkHttpClient
         mClient = new OkHttpClient.Builder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .addInterceptor(REWRITE_HEADER_CONTROL_INTERCEPTOR)
                 .addInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
                 .addInterceptor(new LoggingInterceptor())
                 //                .addInterceptor(loggingInterceptor)//设置 Debug Log 模式
+                // 添加 请求头
+                .addInterceptor(new TokenHeaderInterceptor())
                 .cache(cache)
                 .cookieJar(cookieJar)
                 .build();
@@ -107,7 +117,8 @@ public class BaseApiRetrofit {
         }
     };
 
-    class LoggingInterceptor implements Interceptor {
+    static class LoggingInterceptor implements Interceptor {
+        @NotNull
         @Override
         public Response intercept(Interceptor.Chain chain) throws IOException {
             //这个chain里面包含了request和response，所以你要什么都可以从这里拿
@@ -128,6 +139,28 @@ public class BaseApiRetrofit {
                     response.headers()));
             return response;
         }
+    }
+
+    static class TokenHeaderInterceptor implements Interceptor {
+
+        @NotNull
+        @Override
+        public Response intercept(@NotNull Chain chain) throws IOException {
+            String token = UserCache.getToken();
+            if (TextUtils.isEmpty(token)) {
+                Request originalRequest = chain.request();
+                return chain.proceed(originalRequest);
+            } else {
+                Request originalRequest = chain.request();
+                // 在所有请求中增加 token及时间戳的请求头
+                Request updateRequest = originalRequest.newBuilder()
+                        .header("access_token", token)
+                        .header("timestamp", String.valueOf(System.currentTimeMillis()))
+                        .build();
+                return chain.proceed(updateRequest);
+            }
+        }
+
     }
 
 }
