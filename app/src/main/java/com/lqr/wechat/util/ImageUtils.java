@@ -28,8 +28,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 图像处理工具类
+ * @author Chris
+ *  图像处理工具类
  */
 public class ImageUtils {
 

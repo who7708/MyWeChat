@@ -22,8 +22,8 @@ import android.widget.ImageView;
 import com.lqr.wechat.R;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 气泡型ImageView
+ * @author Chris
+ *  气泡型ImageView
  */
 public class BubbleImageView extends ImageView {
 

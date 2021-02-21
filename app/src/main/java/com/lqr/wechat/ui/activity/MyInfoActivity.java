@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import butterknife.BindView;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 我的个人信息
+ * @author Chris
+ *  我的个人信息
  */
 public class MyInfoActivity extends BaseActivity<IMyInfoAtView, MyInfoAtPresenter> implements IMyInfoAtView {
 

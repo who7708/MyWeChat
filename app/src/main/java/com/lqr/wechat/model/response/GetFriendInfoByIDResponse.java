@@ -2,7 +2,7 @@ package com.lqr.wechat.model.response;
 
 /**
  * Created by wangmingqiang on 16/9/11.
- * Company RongCloud
+ *
  */
 
 public class GetFriendInfoByIDResponse {

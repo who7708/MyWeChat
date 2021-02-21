@@ -10,8 +10,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 自定义圆角的dialog
+ * @author Chris
+ *  自定义圆角的dialog
  */
 public class CustomDialog extends Dialog {
 

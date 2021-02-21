@@ -7,8 +7,8 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 云账户获取demo签名接口
+ * @author Chris
+ *  云账户获取demo签名接口
  */
 
 public interface SignService {

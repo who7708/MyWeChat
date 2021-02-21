@@ -6,8 +6,8 @@ import com.lqr.wechat.util.SPUtils;
 import com.lqr.wechat.util.UIUtils;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 用户缓存
+ * @author Chris
+ *  用户缓存
  */
 public class UserCache {
 

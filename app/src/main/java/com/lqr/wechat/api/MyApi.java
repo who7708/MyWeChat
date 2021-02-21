@@ -48,13 +48,15 @@ import retrofit2.http.Url;
 import rx.Observable;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 server端api
+ * server端api
+ *
+ * @author Chris
  */
 
 public interface MyApi {
 
-    String BASE_URL = "http://api.sealtalk.im/";
+    // String BASE_URL = "http://api.sealtalk.im/";
+    String BASE_URL = "http://192.168.31.10:7001/api/wx/";
 
     //检查手机是否被注册
     @POST("user/check_phone_available")

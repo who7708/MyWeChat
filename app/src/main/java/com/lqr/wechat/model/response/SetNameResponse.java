@@ -1,8 +1,8 @@
 package com.lqr.wechat.model.response;
 
 /**
- * Created by AMing on 16/1/18.
- * Company RongCloud
+ * Created by Chris on 16/1/18.
+ *
  */
 public class SetNameResponse {
     private int code;

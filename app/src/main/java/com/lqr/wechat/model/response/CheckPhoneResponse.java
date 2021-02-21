@@ -1,8 +1,7 @@
 package com.lqr.wechat.model.response;
 
 /**
- * Created by AMing on 15/12/22.
- * Company RongCloud
+ * Created by Chris on 15/12/22.
  */
 public class CheckPhoneResponse {
 

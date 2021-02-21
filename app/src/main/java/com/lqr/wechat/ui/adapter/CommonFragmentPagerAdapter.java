@@ -9,8 +9,8 @@ import com.lqr.wechat.ui.base.BaseFragment;
 import java.util.List;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 通用的ViewPager适配器(FragmentPagerAdapter)
+ * @author Chris
+ *  通用的ViewPager适配器(FragmentPagerAdapter)
  */
 public class CommonFragmentPagerAdapter extends FragmentPagerAdapter {
 

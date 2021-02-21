@@ -26,8 +26,8 @@ import kr.co.namee.permissiongen.PermissionGen;
 import kr.co.namee.permissiongen.PermissionSuccess;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 拍照界面
+ * @author Chris
+ *  拍照界面
  */
 public class TakePhotoActivity extends BaseActivity {
 

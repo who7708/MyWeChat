@@ -18,8 +18,8 @@ import butterknife.BindView;
 import kr.co.namee.permissiongen.PermissionGen;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 微信闪屏页
+ * @author Chris
+ *  微信闪屏页
  */
 public class SplashActivity extends BaseActivity {
 

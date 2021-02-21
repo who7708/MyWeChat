@@ -11,8 +11,8 @@ import android.widget.ImageView;
 import androidx.collection.LruCache;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 视频缩略图加载工具
+ * @author Chris
+ *  视频缩略图加载工具
  */
 public class VideoThumbLoader {
     private ImageView imgView;

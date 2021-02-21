@@ -1,8 +1,8 @@
 package com.lqr.wechat.thread;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 线程池工厂
+ * @author Chris
+ *  线程池工厂
  */
 public class ThreadPoolFactory {
 

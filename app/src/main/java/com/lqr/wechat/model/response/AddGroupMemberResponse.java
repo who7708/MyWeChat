@@ -1,8 +1,8 @@
 package com.lqr.wechat.model.response;
 
 /**
- * Created by AMing on 16/1/27.
- * Company RongCloud
+ * Created by Chris on 16/1/27.
+ *
  */
 public class AddGroupMemberResponse {
     private int code;

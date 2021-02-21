@@ -59,8 +59,8 @@ import io.rong.message.TextMessage;
 import io.rong.message.VoiceMessage;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 会话界面（单聊、群聊）
+ * @author Chris
+ *  会话界面（单聊、群聊）
  */
 public class SessionActivity extends BaseFragmentActivity<ISessionAtView, SessionAtPresenter> implements ISessionAtView, IEmotionSelectedListener, BGARefreshLayout.BGARefreshLayoutDelegate {
 

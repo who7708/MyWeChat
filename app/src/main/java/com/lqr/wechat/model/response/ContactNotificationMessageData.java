@@ -1,8 +1,8 @@
 package com.lqr.wechat.model.response;
 
 /**
- * Created by AMing on 16/2/24.
- * Company RongCloud
+ * Created by Chris on 16/2/24.
+ *
  */
 public class ContactNotificationMessageData {
     /**

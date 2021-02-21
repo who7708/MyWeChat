@@ -23,8 +23,8 @@ import java.util.List;
 import io.rong.imlib.model.UserInfo;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 云账户红包工具
+ * @author Chris
+ *  云账户红包工具
  */
 public class RedPacketUtil {
 

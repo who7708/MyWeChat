@@ -19,8 +19,8 @@ import java.util.Random;
 import io.rong.imlib.model.UserInfo;
 
 /**
- * Created by AMing on 16/4/6.
- * Company RongCloud
+ * Created by Chris on 16/4/6.
+ *
  */
 public class RongGenerate {
 

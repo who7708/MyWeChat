@@ -5,8 +5,8 @@ import com.lqr.wechat.util.PinyinUtils;
 import java.util.List;
 
 /**
- * Created by AMing on 16/1/7.
- * Company RongCloud
+ * Created by Chris on 16/1/7.
+ *
  */
 public class UserRelationshipResponse {
 

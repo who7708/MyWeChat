@@ -45,8 +45,8 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 扫一扫界面
+ * @author Chris
+ *  扫一扫界面
  */
 public class ScanActivity extends BaseActivity<IScanAtView, ScanAtPresenter> implements IScanAtView, QRCodeView.Delegate {
 

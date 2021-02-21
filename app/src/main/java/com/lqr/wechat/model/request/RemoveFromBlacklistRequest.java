@@ -1,8 +1,8 @@
 package com.lqr.wechat.model.request;
 
 /**
- * Created by AMing on 16/3/4.
- * Company RongCloud
+ * Created by Chris on 16/3/4.
+ *
  */
 public class RemoveFromBlacklistRequest {
 

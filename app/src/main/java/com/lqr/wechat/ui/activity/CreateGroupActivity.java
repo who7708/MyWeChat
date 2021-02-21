@@ -22,8 +22,8 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 发起群聊
+ * @author Chris
+ *  发起群聊
  */
 public class CreateGroupActivity extends BaseActivity<ICreateGroupAtView, CreateGroupAtPresenter> implements ICreateGroupAtView {
 

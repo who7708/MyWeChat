@@ -44,8 +44,8 @@ import com.tencent.tencentmap.mapsdk.map.TencentMap;
 import butterknife.BindView;
 
 /**
- * @创建者 CSDN_LQR
- * @描述
+ * @author Chris
+ * 
  */
 public class MyLocationActivity extends BaseActivity<IMyLocationAtView, MyLocationAtPresenter> implements IMyLocationAtView, TencentLocationListener, SensorEventListener {
 

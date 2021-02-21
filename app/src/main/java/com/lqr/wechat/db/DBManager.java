@@ -33,8 +33,8 @@ import rx.Observable;
 import rx.schedulers.Schedulers;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 数据库管理器
+ * @author Chris
+ *  数据库管理器
  */
 public class DBManager {
 

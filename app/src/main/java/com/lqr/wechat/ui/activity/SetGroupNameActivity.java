@@ -25,8 +25,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 设置群名称界面
+ * @author Chris
+ *  设置群名称界面
  */
 public class SetGroupNameActivity extends BaseActivity {
 

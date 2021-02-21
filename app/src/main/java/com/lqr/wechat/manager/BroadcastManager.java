@@ -12,8 +12,8 @@ import java.util.Map;
 import retrofit2.adapter.rxjava.HttpException;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 广播管理
+ * @author Chris
+ *  广播管理
  */
 public class BroadcastManager {
     private final Context mContext;

@@ -3,8 +3,8 @@ package com.lqr.wechat.model.request;
 import java.util.List;
 
 /**
- * Created by AMing on 16/1/28.
- * Company RongCloud
+ * Created by Chris on 16/1/28.
+ *
  */
 public class DeleteGroupMemberRequest {
     private String groupId;

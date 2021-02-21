@@ -33,8 +33,8 @@ import okhttp3.ResponseBody;
 import rx.schedulers.Schedulers;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 查看头像
+ * @author Chris
+ *  查看头像
  */
 public class ShowBigImageActivity extends BaseActivity {
 

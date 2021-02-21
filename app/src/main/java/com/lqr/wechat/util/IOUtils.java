@@ -4,8 +4,8 @@ import java.io.Closeable;
 import java.io.IOException;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 IO流工具类
+ * @author Chris
+ *  IO流工具类
  */
 public class IOUtils {
     /**

@@ -48,8 +48,8 @@ import io.rong.message.VoiceMessage;
 import retrofit2.adapter.rxjava.HttpException;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 会话界面的消息列表适配器
+ * @author Chris
+ *  会话界面的消息列表适配器
  */
 public class SessionAdapter extends LQRAdapterForRecyclerView<Message> {
 

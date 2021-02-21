@@ -15,8 +15,8 @@ import androidx.annotation.Nullable;
 import com.lqr.wechat.R;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 快速导航条
+ * @author Chris
+ *  快速导航条
  */
 public class QuickIndexBar extends View {
 

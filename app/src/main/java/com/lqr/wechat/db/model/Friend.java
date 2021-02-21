@@ -7,8 +7,8 @@ import androidx.annotation.NonNull;
 import org.litepal.crud.DataSupport;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 朋友表(用户信息表)
+ * @author Chris
+ *  朋友表(用户信息表)
  */
 public class Friend extends DataSupport implements Comparable<Friend> {
 

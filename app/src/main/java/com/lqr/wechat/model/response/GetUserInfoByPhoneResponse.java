@@ -3,8 +3,8 @@ package com.lqr.wechat.model.response;
 import java.io.Serializable;
 
 /**
- * Created by AMing on 16/1/4.
- * Company RongCloud
+ * Created by Chris on 16/1/4.
+ *
  */
 public class GetUserInfoByPhoneResponse {
 

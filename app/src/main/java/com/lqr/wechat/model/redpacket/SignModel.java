@@ -1,8 +1,8 @@
 package com.lqr.wechat.model.redpacket;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 云账户签名模型
+ * @author Chris
+ *  云账户签名模型
  */
 
 public class SignModel {

@@ -16,8 +16,8 @@ import com.lqr.wechat.ui.view.IGroupListAtView;
 import butterknife.BindView;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 群聊列表界面
+ * @author Chris
+ *  群聊列表界面
  */
 public class GroupListActivity extends BaseActivity<IGroupListAtView, GroupListAtPresenter> implements IGroupListAtView {
 

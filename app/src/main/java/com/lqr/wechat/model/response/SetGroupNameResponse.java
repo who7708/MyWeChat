@@ -1,8 +1,8 @@
 package com.lqr.wechat.model.response;
 
 /**
- * Created by AMing on 16/1/28.
- * Company RongCloud
+ * Created by Chris on 16/1/28.
+ *
  */
 public class SetGroupNameResponse {
 

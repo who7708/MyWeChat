@@ -3,8 +3,8 @@ package com.lqr.wechat.model.response;
 import java.util.List;
 
 /**
- * Created by AMing on 16/1/26.
- * Company RongCloud
+ * Created by Chris on 16/1/26.
+ *
  */
 public class GetGroupResponse {
 

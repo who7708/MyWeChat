@@ -13,8 +13,8 @@ import com.lqr.wechat.util.UIUtils;
 import butterknife.BindView;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 添加朋友界面
+ * @author Chris
+ *  添加朋友界面
  */
 
 public class AddFriendActivity extends BaseActivity<IAddFriendAtView, AddFriendAtPresenter> implements IAddFriendAtView {

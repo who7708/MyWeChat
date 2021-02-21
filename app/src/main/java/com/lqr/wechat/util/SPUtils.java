@@ -6,8 +6,8 @@ import android.content.SharedPreferences;
 import java.util.Map;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 sharedPreferences工具类(单例模式)
+ * @author Chris
+ *  sharedPreferences工具类(单例模式)
  */
 public class SPUtils {
     private static final String SP_NAME = "common";

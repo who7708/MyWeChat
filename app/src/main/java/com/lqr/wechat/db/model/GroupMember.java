@@ -5,8 +5,8 @@ import org.litepal.crud.DataSupport;
 import java.io.Serializable;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 群成员
+ * @author Chris
+ *  群成员
  */
 public class GroupMember extends DataSupport implements Serializable {
 

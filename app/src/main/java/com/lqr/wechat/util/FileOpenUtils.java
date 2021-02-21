@@ -7,8 +7,8 @@ import android.net.Uri;
 import java.io.File;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 文件打开工具类
+ * @author Chris
+ *  文件打开工具类
  */
 public class FileOpenUtils {
 

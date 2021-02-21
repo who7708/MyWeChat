@@ -21,8 +21,8 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 配置Retrofit（配置网络缓存cache、配置持久cookie免登录）
+ * @author Chris
+ *  配置Retrofit（配置网络缓存cache、配置持久cookie免登录）
  */
 
 public class BaseApiRetrofit {

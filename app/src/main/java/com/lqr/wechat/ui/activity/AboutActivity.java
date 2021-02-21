@@ -5,8 +5,8 @@ import com.lqr.wechat.ui.base.BaseActivity;
 import com.lqr.wechat.ui.base.BasePresenter;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 关于界面
+ * @author Chris
+ *  关于界面
  */
 public class AboutActivity extends BaseActivity {
 

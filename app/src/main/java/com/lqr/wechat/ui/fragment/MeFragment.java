@@ -31,8 +31,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 我界面
+ * @author Chris
+ *  我界面
  */
 public class MeFragment extends BaseFragment<IMeFgView, MeFgPresenter> implements IMeFgView {
 

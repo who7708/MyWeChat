@@ -14,8 +14,8 @@ import com.lqr.wechat.ui.view.IPostScriptAtView;
 import butterknife.BindView;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 附言界面
+ * @author Chris
+ *  附言界面
  */
 public class PostScriptActivity extends BaseActivity<IPostScriptAtView, PostScriptAtPresenter> implements IPostScriptAtView {
 

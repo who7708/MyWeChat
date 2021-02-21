@@ -4,8 +4,8 @@ import com.lqr.wechat.util.FileUtils;
 import com.lqr.wechat.util.LogUtils;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 全局常量类
+ * @author Chris
+ *  全局常量类
  */
 public class AppConst {
 

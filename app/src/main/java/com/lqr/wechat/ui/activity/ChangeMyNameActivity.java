@@ -24,8 +24,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 更改名字界面
+ * @author Chris
+ *  更改名字界面
  */
 public class ChangeMyNameActivity extends BaseActivity {
 

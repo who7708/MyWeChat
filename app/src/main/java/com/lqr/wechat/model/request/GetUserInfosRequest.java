@@ -3,8 +3,8 @@ package com.lqr.wechat.model.request;
 import java.util.List;
 
 /**
- * Created by AMing on 16/5/23.
- * Company RongCloud
+ * Created by Chris on 16/5/23.
+ *
  */
 public class GetUserInfosRequest {
     private List<String> querystring;

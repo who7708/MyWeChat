@@ -1,8 +1,8 @@
 package com.lqr.wechat.sdk;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 RongIMClient提供的SDK
+ * @author Chris
+ *  RongIMClient提供的SDK
  */
 
 public class RongCloudSDK {

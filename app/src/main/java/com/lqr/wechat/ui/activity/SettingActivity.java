@@ -15,8 +15,8 @@ import butterknife.BindView;
 import io.rong.imlib.RongIMClient;
 
 /**
- * @创建者 CSDN_LQR
- * @描述 设置界面
+ * @author Chris
+ *  设置界面
  */
 public class SettingActivity extends BaseActivity {
 

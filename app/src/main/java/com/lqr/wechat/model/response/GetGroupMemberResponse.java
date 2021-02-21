@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by AMing on 16/1/27.
- * Company RongCloud
+ * Created by Chris on 16/1/27.
+ *
  */
 public class GetGroupMemberResponse implements Serializable {
 

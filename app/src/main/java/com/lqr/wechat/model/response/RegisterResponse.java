@@ -1,8 +1,8 @@
 package com.lqr.wechat.model.response;
 
 /**
- * Created by AMing on 15/12/23.
- * Company RongCloud
+ * Created by Chris on 15/12/23.
+ *
  */
 public class RegisterResponse {
 

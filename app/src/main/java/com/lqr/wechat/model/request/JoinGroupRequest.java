@@ -1,8 +1,8 @@
 package com.lqr.wechat.model.request;
 
 /**
- * Created by AMing on 16/4/1.
- * Company RongCloud
+ * Created by Chris on 16/4/1.
+ *
  */
 public class JoinGroupRequest {
     private String groupId;

@@ -1,8 +1,8 @@
 package com.lqr.wechat.model.response;
 
 /**
- * Created by AMing on 16/3/31.
- * Company RongCloud
+ * Created by Chris on 16/3/31.
+ *
  */
 public class QiNiuTokenResponse {
 
