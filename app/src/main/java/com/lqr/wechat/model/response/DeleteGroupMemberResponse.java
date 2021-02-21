@@ -5,7 +5,7 @@ package com.lqr.wechat.model.response;
  * Company RongCloud
  */
 public class DeleteGroupMemberResponse {
-    private  int code;
+    private int code;
 
     public int getCode() {
         return code;

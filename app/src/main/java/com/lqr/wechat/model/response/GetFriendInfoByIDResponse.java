@@ -27,10 +27,8 @@ public class GetFriendInfoByIDResponse {
 
     public static class ResultEntity {
 
-
         private String displayName;
         private UserEntity user;
-
 
         public void setdisplayName(String displayName) {
             this.displayName = displayName;

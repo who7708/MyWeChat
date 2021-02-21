@@ -16,9 +16,9 @@ import retrofit2.adapter.rxjava.HttpException;
  * @描述 广播管理
  */
 public class BroadcastManager {
-    private Context mContext;
+    private final Context mContext;
     private static BroadcastManager mInstance;
-    private Map<String, BroadcastReceiver> mReceiverMap;
+    private final Map<String, BroadcastReceiver> mReceiverMap;
 
     private BroadcastManager(Context context) {
         mContext = context.getApplicationContext();
@@ -28,8 +28,9 @@ public class BroadcastManager {
     public static BroadcastManager getInstance(Context context) {
         if (mInstance == null) {
             synchronized (BroadcastManager.class) {
-                if (mInstance == null)
+                if (mInstance == null) {
                     mInstance = new BroadcastManager(context);
+                }
             }
         }
         return mInstance;
@@ -94,7 +95,6 @@ public class BroadcastManager {
         intent.putExtra("String", s);
         mContext.sendBroadcast(intent);
     }
-
 
     /**
      * 销毁广播

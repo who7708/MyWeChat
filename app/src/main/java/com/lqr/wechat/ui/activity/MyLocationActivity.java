@@ -4,13 +4,15 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.lqr.recyclerview.LQRRecyclerView;
 import com.lqr.wechat.R;
@@ -38,7 +40,6 @@ import com.tencent.mapsdk.raster.model.Marker;
 import com.tencent.mapsdk.raster.model.MarkerOptions;
 import com.tencent.tencentmap.mapsdk.map.MapView;
 import com.tencent.tencentmap.mapsdk.map.TencentMap;
-import com.zhy.autolayout.AutoLinearLayout;
 
 import butterknife.BindView;
 
@@ -109,12 +110,13 @@ public class MyLocationActivity extends BaseActivity<IMyLocationAtView, MyLocati
             }
         });
         mIbShowLocation.setOnClickListener(v -> requestLocationUpdate());
-//        mSensorManager.registerListener(MyLocationActivity.this, mOritationSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        //        mSensorManager.registerListener(MyLocationActivity.this, mOritationSensor, SensorManager.SENSOR_DELAY_NORMAL);
         mTencentMap.setOnMapCameraChangeListener(new TencentMap.OnMapCameraChangeListener() {
             @Override
             public void onCameraChange(CameraPosition cameraPosition) {
-                if (myLocation != null)
+                if (myLocation != null) {
                     myLocation.setPosition(mTencentMap.getMapCenter());
+                }
             }
 
             @Override
@@ -147,7 +149,7 @@ public class MyLocationActivity extends BaseActivity<IMyLocationAtView, MyLocati
     }
 
     private void setRlMapHeight(int height) {
-        AutoLinearLayout.LayoutParams params = (AutoLinearLayout.LayoutParams) mRlMap.getLayoutParams();
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mRlMap.getLayoutParams();
         params.height = height;
         mRlMap.setLayoutParams(params);
     }
@@ -215,9 +217,9 @@ public class MyLocationActivity extends BaseActivity<IMyLocationAtView, MyLocati
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-//        if (myLocation != null) {
-//            myLocation.setRotation(event.values[0]);
-//        }
+        //        if (myLocation != null) {
+        //            myLocation.setRotation(event.values[0]);
+        //        }
     }
 
     @Override

@@ -7,6 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -46,12 +47,7 @@ public class DeleteContactMessage extends MessageContent {
             var4.printStackTrace();
         }
 
-        try {
-            return var1.toString().getBytes("UTF-8");
-        } catch (UnsupportedEncodingException var3) {
-            var3.printStackTrace();
-            return null;
-        }
+        return var1.toString().getBytes(StandardCharsets.UTF_8);
     }
 
     private String getEmotion(String var1) {
@@ -80,11 +76,7 @@ public class DeleteContactMessage extends MessageContent {
     public DeleteContactMessage(byte[] var1) {
         String var2 = null;
 
-        try {
-            var2 = new String(var1, "UTF-8");
-        } catch (UnsupportedEncodingException var5) {
-            ;
-        }
+        var2 = new String(var1, StandardCharsets.UTF_8);
 
         try {
             JSONObject var3 = new JSONObject(var2);
@@ -94,7 +86,6 @@ public class DeleteContactMessage extends MessageContent {
             }
 
         } catch (JSONException var4) {
-            ;
         }
 
     }

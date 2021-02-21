@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoRelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,13 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:rv_divider_color="@color/line"
-        app:rv_divider_size="1px"/>
+        app:rv_divider_size="1px" />
 
     <com.lqr.wechat.widget.QuickIndexBar
         android:id="@+id/qib"
         android:layout_width="40px"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true" />
 
     <!--字母对话框-->
     <TextView
@@ -29,6 +28,6 @@
         android:text="A"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </com.zhy.autolayout.AutoRelativeLayout>

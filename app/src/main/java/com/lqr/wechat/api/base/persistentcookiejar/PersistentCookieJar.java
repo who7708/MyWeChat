@@ -16,7 +16,6 @@
 
 package com.lqr.wechat.api.base.persistentcookiejar;
 
-
 import com.lqr.wechat.api.base.persistentcookiejar.cache.CookieCache;
 import com.lqr.wechat.api.base.persistentcookiejar.persistence.CookiePersistor;
 
@@ -29,8 +28,8 @@ import okhttp3.HttpUrl;
 
 public class PersistentCookieJar implements ClearableCookieJar {
 
-    private CookieCache cache;
-    private CookiePersistor persistor;
+    private final CookieCache cache;
+    private final CookiePersistor persistor;
 
     public PersistentCookieJar(CookieCache cache, CookiePersistor persistor) {
         this.cache = cache;

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray5"
     android:orientation="vertical">
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <LinearLayout
         android:id="@+id/llMyInfo"
         android:layout_width="match_parent"
         android:layout_height="178px"
@@ -23,9 +22,9 @@
             android:layout_marginLeft="30px"
             android:layout_marginRight="@dimen/option_item_margin_right"
             android:scaleType="centerCrop"
-            android:src="@mipmap/default_header"/>
+            android:src="@mipmap/default_header" />
 
-        <com.zhy.autolayout.AutoLinearLayout
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="140px"
             android:layout_weight="1"
@@ -40,7 +39,7 @@
                 android:singleLine="true"
                 android:text="沧晓"
                 android:textColor="@color/gray0"
-                android:textSize="30px"/>
+                android:textSize="30px" />
 
             <TextView
                 android:id="@+id/tvAccount"
@@ -50,9 +49,9 @@
                 android:singleLine="true"
                 android:text="@string/my_chat_account"
                 android:textColor="@color/gray2"
-                android:textSize="26px"/>
+                android:textSize="26px" />
 
-        </com.zhy.autolayout.AutoLinearLayout>
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/ivQRCordCard"
@@ -60,9 +59,9 @@
             android:layout_height="40px"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="@dimen/option_item_margin_right"
-            android:src="@mipmap/ic_qr_code"/>
+            android:src="@mipmap/ic_qr_code" />
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </LinearLayout>
 
     <com.lqr.optionitemview.OptionItemView
         android:id="@+id/oivAlbum"
@@ -74,7 +73,7 @@
         app:left_src="@mipmap/ic_photo_blue"
         app:left_text="@string/jian_shu"
         app:left_text_color="@color/black0"
-        app:left_text_size="16sp"/>
+        app:left_text_size="16sp" />
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
@@ -84,8 +83,7 @@
         <View
             style="@style/Line"
             android:layout_marginLeft="@dimen/option_item_margin_left"
-            android:layout_marginRight="@dimen/option_item_margin_right"
-            />
+            android:layout_marginRight="@dimen/option_item_margin_right" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.lqr.optionitemview.OptionItemView
@@ -97,7 +95,7 @@
         app:left_src="@mipmap/ic_sellection"
         app:left_text="@string/csdn"
         app:left_text_color="@color/black0"
-        app:left_text_size="16sp"/>
+        app:left_text_size="16sp" />
 
     <com.lqr.optionitemview.OptionItemView
         android:id="@+id/oivWallet"
@@ -109,7 +107,7 @@
         app:left_src="@mipmap/ic_wallet_blue"
         app:left_text="@string/oschina"
         app:left_text_color="@color/black0"
-        app:left_text_size="16sp"/>
+        app:left_text_size="16sp" />
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
@@ -119,8 +117,7 @@
         <View
             style="@style/Line"
             android:layout_marginLeft="@dimen/option_item_margin_left"
-            android:layout_marginRight="@dimen/option_item_margin_right"
-            />
+            android:layout_marginRight="@dimen/option_item_margin_right" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.lqr.optionitemview.OptionItemView
@@ -132,7 +129,7 @@
         app:left_src="@mipmap/ic_card_pack"
         app:left_text="@string/github"
         app:left_text_color="@color/black0"
-        app:left_text_size="16sp"/>
+        app:left_text_size="16sp" />
 
     <com.lqr.optionitemview.OptionItemView
         android:id="@+id/oivEmoji"
@@ -145,7 +142,7 @@
         app:left_src="@mipmap/ic_emo_yellow"
         app:left_text="@string/emotion"
         app:left_text_color="@color/black0"
-        app:left_text_size="16sp"/>
+        app:left_text_size="16sp" />
 
     <com.lqr.optionitemview.OptionItemView
         android:id="@+id/oivSetting"
@@ -158,6 +155,6 @@
         app:left_src="@mipmap/ic_setting_blue"
         app:left_text="@string/setting"
         app:left_text_color="@color/black0"
-        app:left_text_size="16sp"/>
+        app:left_text_size="16sp" />
 
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

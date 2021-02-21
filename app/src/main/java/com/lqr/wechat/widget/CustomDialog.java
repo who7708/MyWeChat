@@ -15,7 +15,6 @@ import android.view.WindowManager;
  */
 public class CustomDialog extends Dialog {
 
-
     /**
      * 宽高由布局文件中指定（但是最底层的宽度无效，可以多嵌套一层解决）
      */

@@ -25,9 +25,8 @@ import io.rong.imlib.model.UserInfo;
 public class RongGenerate {
 
     //    private static String SAVEADDRESS = "/data/data/cn.rongcloud.im/temp";
-    private static String SAVEADDRESS = UIUtils.getContext().getFilesDir().getPath();// /data/data/<application package>/files
+    private static final String SAVEADDRESS = UIUtils.getContext().getFilesDir().getPath();// /data/data/<application package>/files
     private static final String SCHEMA = "file://";
-
 
     public static String generateDefaultAvatar(String username, String userid) {
 
@@ -64,10 +63,11 @@ public class RongGenerate {
     }
 
     public static String generateDefaultAvatar(UserInfo userInfo) {
-        if (userInfo == null)
+        if (userInfo == null) {
             return null;
-        else
+        } else {
             return generateDefaultAvatar(userInfo.getName(), userInfo.getUserId());
+        }
     }
 
     private static void createDir(String saveaddress) {
@@ -107,7 +107,6 @@ public class RongGenerate {
         return portraitColors[i];
     }
 
-
     private static int getAscii(char cn) {
         byte[] bytes = (String.valueOf(cn)).getBytes();
         if (bytes.length == 1) { //单字节字符
@@ -133,7 +132,6 @@ public class RongGenerate {
         view.buildDrawingCache();
         return view.getDrawingCache();
     }
-
 
     private final static int[] li_SecPosValue = {1601, 1637, 1833, 2078, 2274,
             2302, 2433, 2594, 2787, 3106, 3212, 3472, 3635, 3722, 3730, 3858,

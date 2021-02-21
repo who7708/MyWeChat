@@ -1,8 +1,9 @@
 package com.lqr.wechat.widget;
 
 import android.content.Context;
-import androidx.cardview.widget.CardView;
 import android.util.AttributeSet;
+
+import androidx.cardview.widget.CardView;
 
 import com.zhy.autolayout.AutoFrameLayout;
 import com.zhy.autolayout.utils.AutoLayoutHelper;
@@ -37,6 +38,5 @@ public class AutoCardView extends CardView {
         }
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
-
 
 }

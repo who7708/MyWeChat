@@ -53,9 +53,9 @@ import retrofit2.adapter.rxjava.HttpException;
  */
 public class SessionAdapter extends LQRAdapterForRecyclerView<Message> {
 
-    private Context mContext;
-    private List<Message> mData;
-    private SessionAtPresenter mPresenter;
+    private final Context mContext;
+    private final List<Message> mData;
+    private final SessionAtPresenter mPresenter;
 
     private static final int SEND_TEXT = R.layout.item_text_send;
     private static final int RECEIVE_TEXT = R.layout.item_text_receive;
@@ -238,13 +238,14 @@ public class SessionAdapter extends LQRAdapterForRecyclerView<Message> {
         } else if (msgContent instanceof ImageMessage) {
             ImageMessage imageMessage = (ImageMessage) msgContent;
             BubbleImageView bivPic = helper.getView(R.id.bivPic);
-            boolean isSend = item.getMessageDirection() == Message.MessageDirection.SEND ? true : false;
+            boolean isSend = item.getMessageDirection() == Message.MessageDirection.SEND;
             if (isSend) {
                 Message.SentStatus sentStatus = item.getSentStatus();
                 if (sentStatus == Message.SentStatus.SENDING) {
                     bivPic.setProgressVisible(true);
-                    if (!TextUtils.isEmpty(item.getExtra()))
+                    if (!TextUtils.isEmpty(item.getExtra())) {
                         bivPic.setPercent(Integer.valueOf(item.getExtra()));
+                    }
                     bivPic.showShadow(true);
                     helper.setViewVisibility(R.id.llError, View.GONE);
                 } else if (sentStatus == Message.SentStatus.FAILED) {
@@ -265,7 +266,7 @@ public class SessionAdapter extends LQRAdapterForRecyclerView<Message> {
         } else if (msgContent instanceof FileMessage) {
             BubbleImageView bivPic = helper.getView(R.id.bivPic);
             FileMessage fileMessage = (FileMessage) msgContent;
-            boolean isSend = item.getMessageDirection() == Message.MessageDirection.SEND ? true : false;
+            boolean isSend = item.getMessageDirection() == Message.MessageDirection.SEND;
 
             if (MediaFileUtils.isImageFileType(fileMessage.getName())) {
                 if (isSend) {
@@ -338,16 +339,16 @@ public class SessionAdapter extends LQRAdapterForRecyclerView<Message> {
             helper.setViewVisibility(R.id.tvName, View.GONE);
         } else {
             helper.setViewVisibility(R.id.tvName, View.GONE);
-//                    .setText(R.id.tvName, item.getContent().getUserInfo().getName());
+            //                    .setText(R.id.tvName, item.getContent().getUserInfo().getName());
         }
     }
 
     private void setTime(LQRViewHolderForRecyclerView helper, Message item, int position) {
-        boolean isSend = item.getMessageDirection() == Message.MessageDirection.SEND ? true : false;
+        boolean isSend = item.getMessageDirection() == Message.MessageDirection.SEND;
         long msgTime = isSend ? item.getSentTime() : item.getReceivedTime();
         if (position > 0) {
             Message preMsg = mData.get(position - 1);
-            boolean isSendForPreMsg = preMsg.getMessageDirection() == Message.MessageDirection.SEND ? true : false;
+            boolean isSendForPreMsg = preMsg.getMessageDirection() == Message.MessageDirection.SEND;
             long preMsgTime = isSendForPreMsg ? preMsg.getSentTime() : preMsg.getReceivedTime();
             if (msgTime - preMsgTime > (5 * 60 * 1000)) {
                 helper.setViewVisibility(R.id.tvTime, View.VISIBLE).setText(R.id.tvTime, TimeUtils.getMsgFormatTime(msgTime));
@@ -362,7 +363,7 @@ public class SessionAdapter extends LQRAdapterForRecyclerView<Message> {
     @Override
     public int getItemViewType(int position) {
         Message msg = mData.get(position);
-        boolean isSend = msg.getMessageDirection() == Message.MessageDirection.SEND ? true : false;
+        boolean isSend = msg.getMessageDirection() == Message.MessageDirection.SEND;
 
         MessageContent msgContent = msg.getContent();
         if (msgContent instanceof TextMessage) {

@@ -8,7 +8,6 @@ import com.lqr.wechat.ui.base.BaseFragment;
 
 import java.util.List;
 
-
 /**
  * @创建者 CSDN_LQR
  * @描述 通用的ViewPager适配器(FragmentPagerAdapter)
@@ -19,7 +18,7 @@ public class CommonFragmentPagerAdapter extends FragmentPagerAdapter {
 
     private int mViewPagerType = 0;
     public String[] mainViewPagerTitle = null;
-    private List<BaseFragment> mFragments;
+    private final List<BaseFragment> mFragments;
 
     public CommonFragmentPagerAdapter(FragmentManager fm, List<BaseFragment> fragments) {
         super(fm);
@@ -44,12 +43,12 @@ public class CommonFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-//        if (mViewPagerType == MAIN_VIEW_PAGER) {
-//            if (mainViewPagerTitle == null) {
-//                mainViewPagerTitle = UIUtils.getStringArr(R.array.main_view_pager_title);
-//            }
-//            return mainViewPagerTitle[position];
-//        }
+        //        if (mViewPagerType == MAIN_VIEW_PAGER) {
+        //            if (mainViewPagerTitle == null) {
+        //                mainViewPagerTitle = UIUtils.getStringArr(R.array.main_view_pager_title);
+        //            }
+        //            return mainViewPagerTitle[position];
+        //        }
 
         //默认的ViewPager(不需要返回title)
         return super.getPageTitle(position);

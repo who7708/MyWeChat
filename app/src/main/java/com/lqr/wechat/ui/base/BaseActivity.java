@@ -4,23 +4,24 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import com.google.android.material.appbar.AppBarLayout;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.appbar.AppBarLayout;
 import com.jaeger.library.StatusBarUtil;
 import com.lqr.wechat.R;
 import com.lqr.wechat.app.MyApp;
 import com.lqr.wechat.ui.activity.WebViewActivity;
 import com.lqr.wechat.util.UIUtils;
 import com.lqr.wechat.widget.CustomDialog;
-import com.zhy.autolayout.AutoLinearLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,7 +45,7 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
     @BindView(R.id.vToolbarDivision)
     public View mToolbarDivision;
     @BindView(R.id.llToolbarTitle)
-    public AutoLinearLayout mLlToolbarTitle;
+    public LinearLayout mLlToolbarTitle;
     @BindView(R.id.tvToolbarTitle)
     public TextView mToolbarTitle;
     @BindView(R.id.tvToolbarSubTitle)
@@ -87,15 +88,15 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
 
         //如果界面中有使用toolbar，则使用toolbar替代actionbar
         //默认不是使用NoActionBar主题，所以如果需要使用Toolbar，需要自定义NoActionBar主题后，在AndroidManifest.xml中对指定Activity设置theme
-//        if (mToolbar != null) {
-//            setSupportActionBar(mToolbar);
-//            if (isToolbarCanBack()) {
-//                ActionBar actionBar = getSupportActionBar();
-//                if (actionBar != null) {
-//                    actionBar.setDisplayHomeAsUpEnabled(true);
-//                }
-//            }
-//        }
+        //        if (mToolbar != null) {
+        //            setSupportActionBar(mToolbar);
+        //            if (isToolbarCanBack()) {
+        //                ActionBar actionBar = getSupportActionBar();
+        //                if (actionBar != null) {
+        //                    actionBar.setDisplayHomeAsUpEnabled(true);
+        //                }
+        //            }
+        //        }
 
         mToolbarNavigation.setVisibility(isToolbarCanBack() ? View.VISIBLE : View.GONE);
         mToolbarDivision.setVisibility(isToolbarCanBack() ? View.VISIBLE : View.GONE);
@@ -153,8 +154,9 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
     public Dialog showWaitingDialog(String tip) {
         hideWaitingDialog();
         View view = View.inflate(this, R.layout.dialog_waiting, null);
-        if (!TextUtils.isEmpty(tip))
+        if (!TextUtils.isEmpty(tip)) {
             ((TextView) view.findViewById(R.id.tvTip)).setText(tip);
+        }
         mDialogWaiting = new CustomDialog(this, view, R.style.MyDialog);
         mDialogWaiting.show();
         mDialogWaiting.setCancelable(false);
@@ -217,7 +219,6 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
         intent.putExtra("url", url);
         jumpToActivity(intent);
     }
-
 
     public void jumpToActivityAndClearTask(Class activity) {
         Intent intent = new Intent(this, activity);

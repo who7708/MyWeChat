@@ -8,7 +8,6 @@ import java.io.Serializable;
  */
 public class GetUserInfoByPhoneResponse {
 
-
     /**
      * code : 200
      * result : {"id":"10YVscJI3","nickname":"阿明","portraitUri":""}

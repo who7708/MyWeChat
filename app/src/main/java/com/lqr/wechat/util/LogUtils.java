@@ -7,7 +7,6 @@ import com.lqr.wechat.app.AppConst;
 
 import java.util.List;
 
-
 /**
  * @创建者 CSDN_LQR
  * @描述 日志级别是LEVEL_ALL显示所有信息, 包括System.out.println信息
@@ -17,7 +16,7 @@ public class LogUtils {
     /**
      * 日志输出时的TAG
      */
-    private static String mTag = AppConst.TAG;
+    private static final String mTag = AppConst.TAG;
     /**
      * 日志输出级别NONE
      */
@@ -55,7 +54,7 @@ public class LogUtils {
     /**
      * 是否允许输出log
      */
-    private static int mDebuggable = AppConst.DEBUGLEVEL;
+    private static final int mDebuggable = AppConst.DEBUGLEVEL;
 
     /**
      * 用于记时的变量

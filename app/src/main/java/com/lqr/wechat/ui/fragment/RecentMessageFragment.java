@@ -30,7 +30,6 @@ public class RecentMessageFragment extends BaseFragment<IRecentMessageFgView, Re
         registerBR();
     }
 
-
     @Override
     public void onResume() {
         super.onResume();
@@ -41,9 +40,9 @@ public class RecentMessageFragment extends BaseFragment<IRecentMessageFgView, Re
 
     @Override
     public void initData() {
-//        UIUtils.postTaskDelay(() -> {
-//        mPresenter.getConversations();
-//        }, 1000);
+        //        UIUtils.postTaskDelay(() -> {
+        //        mPresenter.getConversations();
+        //        }, 1000);
     }
 
     @Override

@@ -130,10 +130,7 @@ public class RegisterActivity extends BaseActivity<IRegisterAtView, RegisterAtPr
         int pwdLength = mEtPwd.getText().toString().trim().length();
         int phoneLength = mEtPhone.getText().toString().trim().length();
         int codeLength = mEtVerifyCode.getText().toString().trim().length();
-        if (nickNameLength > 0 && pwdLength > 0 && phoneLength > 0 && codeLength > 0) {
-            return true;
-        }
-        return false;
+        return nickNameLength > 0 && pwdLength > 0 && phoneLength > 0 && codeLength > 0;
     }
 
     @Override

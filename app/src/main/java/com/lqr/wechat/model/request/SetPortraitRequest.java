@@ -8,7 +8,6 @@ public class SetPortraitRequest {
 
     private String portraitUri;
 
-
     public SetPortraitRequest(String portraitUri) {
         this.portraitUri = portraitUri;
     }

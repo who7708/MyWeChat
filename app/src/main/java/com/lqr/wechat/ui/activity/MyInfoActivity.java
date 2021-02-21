@@ -19,7 +19,6 @@ import com.lqr.wechat.ui.view.IMyInfoAtView;
 
 import java.util.ArrayList;
 
-
 import butterknife.BindView;
 
 /**
@@ -89,7 +88,6 @@ public class MyInfoActivity extends BaseActivity<IMyInfoAtView, MyInfoAtPresente
                 }
         }
     }
-
 
     private void registerBR() {
         BroadcastManager.getInstance(this).register(AppConst.CHANGE_INFO_FOR_CHANGE_NAME, new BroadcastReceiver() {

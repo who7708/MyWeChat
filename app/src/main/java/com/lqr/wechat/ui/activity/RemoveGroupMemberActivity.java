@@ -34,8 +34,8 @@ import io.rong.imlib.model.UserInfo;
 public class RemoveGroupMemberActivity extends BaseActivity {
 
     private String mGroupId;
-    private List<GroupMember> mData = new ArrayList<>();
-    private List<GroupMember> mSelectedData = new ArrayList<>();
+    private final List<GroupMember> mData = new ArrayList<>();
+    private final List<GroupMember> mSelectedData = new ArrayList<>();
 
     @BindView(R.id.btnToolbarSend)
     Button mBtnToolbarSend;
@@ -104,7 +104,7 @@ public class RemoveGroupMemberActivity extends BaseActivity {
 
                     CheckBox cb = helper.getView(R.id.cb);
                     cb.setClickable(true);
-                    cb.setChecked(mSelectedData.contains(item) ? true : false);
+                    cb.setChecked(mSelectedData.contains(item));
                     cb.setOnClickListener(v -> {
                         if (cb.isChecked()) {
                             mSelectedData.add(item);

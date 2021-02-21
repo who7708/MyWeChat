@@ -22,12 +22,11 @@ import com.lqr.wechat.ui.view.IGroupListAtView;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class GroupListAtPresenter extends BasePresenter<IGroupListAtView> {
 
-    private List<Groups> mData = new ArrayList<>();
+    private final List<Groups> mData = new ArrayList<>();
     private LQRAdapterForRecyclerView<Groups> mAdapter;
-    private LQRNineGridImageViewAdapter mNgivAdapter = new LQRNineGridImageViewAdapter<GroupMember>() {
+    private final LQRNineGridImageViewAdapter mNgivAdapter = new LQRNineGridImageViewAdapter<GroupMember>() {
         @Override
         protected void onDisplayImage(Context context, ImageView imageView, GroupMember groupMember) {
             Glide.with(context).load(groupMember.getPortraitUri()).centerCrop().into(imageView);

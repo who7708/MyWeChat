@@ -42,7 +42,7 @@ public class DBManager {
     private boolean mHasFetchedFriends = false;
     private boolean mHasFetchedGroups = false;
     private boolean mHasFetchedGroupMembers = false;
-    private LinkedHashMap<String, UserInfo> mUserInfoCache;
+    private final LinkedHashMap<String, UserInfo> mUserInfoCache;
     private List<Groups> mGroupsList;
 
     public DBManager() {
@@ -197,7 +197,6 @@ public class DBManager {
         }
     }
 
-
     public void getGroupMember(String groupId) {
         if (!mHasFetchedGroupMembers) {
             deleteGroupMembers();
@@ -236,8 +235,9 @@ public class DBManager {
      * @return
      */
     public UserInfo getUserInfo(String userid) {
-        if (TextUtils.isEmpty(userid))
+        if (TextUtils.isEmpty(userid)) {
             return null;
+        }
 
         if (mUserInfoCache != null) {
             UserInfo userInfo = mUserInfoCache.get(userid);
@@ -271,9 +271,9 @@ public class DBManager {
      * 清除所有用户数据
      */
     public void deleteAllUserInfo() {
-//        deleteFriends();
-//        deleteGroups();
-//        deleteGroupMembers();
+        //        deleteFriends();
+        //        deleteGroups();
+        //        deleteGroupMembers();
         DataSupport.deleteAll(Friend.class);
         DataSupport.deleteAll(GroupMember.class);
         DataSupport.deleteAll(Groups.class);
@@ -282,17 +282,11 @@ public class DBManager {
 
     public boolean isMyFriend(String userid) {
         Friend friend = getFriendById(userid);
-        if (friend != null) {
-            return true;
-        }
-        return false;
+        return friend != null;
     }
 
     public boolean isMe(String userid) {
-        if (UserCache.getId().equalsIgnoreCase(userid)) {
-            return true;
-        }
-        return false;
+        return UserCache.getId().equalsIgnoreCase(userid);
     }
 
     public boolean isInThisGroup(String groupId) {
@@ -310,7 +304,7 @@ public class DBManager {
             }
             friend.saveOrUpdate("userid = ?", friend.getUserId());
             //更新过本地好友数据后，清空内存中对应用户信息缓存
-            if (mUserInfoCache != null && mUserInfoCache.containsKey(friend.getUserId())) {
+            if (mUserInfoCache != null) {
                 mUserInfoCache.remove(friend.getUserId());
             }
         }
@@ -323,14 +317,15 @@ public class DBManager {
     public synchronized Friend getFriendById(String userid) {
         if (!TextUtils.isEmpty(userid)) {
             List<Friend> friends = DataSupport.where("userid = ?", userid).find(Friend.class);
-            if (friends != null && friends.size() > 0)
+            if (friends != null && friends.size() > 0) {
                 return friends.get(0);
+            }
         }
         return null;
     }
 
     public synchronized List<Friend> getFriends() {
-//        return DataSupport.findAll(Friend.class);
+        //        return DataSupport.findAll(Friend.class);
         return DataSupport.where("userid != ?", UserCache.getId()).find(Friend.class);
     }
 
@@ -353,8 +348,9 @@ public class DBManager {
                 friends.add(friend);
             }
         }
-        if (friends != null && friends.size() > 0)
+        if (friends != null && friends.size() > 0) {
             DataSupport.saveAll(friends);
+        }
     }
 
     public synchronized void deleteFriends() {
@@ -411,8 +407,9 @@ public class DBManager {
                 mGroupsList.add(new Groups(groups.getGroup().getId(), groups.getGroup().getName(), portrait, String.valueOf(groups.getRole())));
             }
         }
-        if (mGroupsList.size() > 0)
+        if (mGroupsList.size() > 0) {
             DataSupport.saveAll(mGroupsList);
+        }
     }
 
     public synchronized void deleteGroups() {
@@ -437,8 +434,9 @@ public class DBManager {
     }
 
     public synchronized void updateGroupMemberPortraitUri(String userId, String portraitUri) {
-        if (TextUtils.isEmpty(portraitUri))
+        if (TextUtils.isEmpty(portraitUri)) {
             return;
+        }
         ContentValues values = new ContentValues();
         values.put("portraituri", portraitUri);
         DataSupport.updateAll(GroupMember.class, values, "userid = ?", userId);
@@ -449,8 +447,9 @@ public class DBManager {
     }
 
     public synchronized List<GroupMember> getGroupMembersWithUserId(String userId) {
-        if (TextUtils.isEmpty(userId))
+        if (TextUtils.isEmpty(userId)) {
             return null;
+        }
         return DataSupport.where("userid = ?", userId).find(GroupMember.class);
     }
 
@@ -567,40 +566,40 @@ public class DBManager {
         return RongGenerate.generateDefaultAvatar(name, userId);
     }
 
-//    public String getPortraitUri(UserInfoBean bean) {
-//        if (bean != null) {
-//            if (bean.getPortraitUri() != null) {
-//                if (TextUtils.isEmpty(bean.getPortraitUri().toString())) {
-//                    if (bean.getName() != null) {
-//                        return RongGenerate.generateDefaultAvatar(bean.getName(), bean.getUserId());
-//                    } else {
-//                        return null;
-//                    }
-//                } else {
-//                    return bean.getPortraitUri().toString();
-//                }
-//            } else {
-//                if (bean.getName() != null) {
-//                    return RongGenerate.generateDefaultAvatar(bean.getName(), bean.getUserId());
-//                } else {
-//                    return null;
-//                }
-//            }
-//
-//        }
-//        return null;
-//    }
-//
-//    public String getPortraitUri(GetGroupInfoResponse groupInfoResponse) {
-//        if (groupInfoResponse.getResult() != null) {
-//            Groups groups = new Groups(groupInfoResponse.getResult().getId(),
-//                    groupInfoResponse.getResult().getName(),
-//                    groupInfoResponse.getResult().getPortraitUri());
-//            return getPortraitUri(groups);
-//        }
-//        return null;
-//    }
-//
+    //    public String getPortraitUri(UserInfoBean bean) {
+    //        if (bean != null) {
+    //            if (bean.getPortraitUri() != null) {
+    //                if (TextUtils.isEmpty(bean.getPortraitUri().toString())) {
+    //                    if (bean.getName() != null) {
+    //                        return RongGenerate.generateDefaultAvatar(bean.getName(), bean.getUserId());
+    //                    } else {
+    //                        return null;
+    //                    }
+    //                } else {
+    //                    return bean.getPortraitUri().toString();
+    //                }
+    //            } else {
+    //                if (bean.getName() != null) {
+    //                    return RongGenerate.generateDefaultAvatar(bean.getName(), bean.getUserId());
+    //                } else {
+    //                    return null;
+    //                }
+    //            }
+    //
+    //        }
+    //        return null;
+    //    }
+    //
+    //    public String getPortraitUri(GetGroupInfoResponse groupInfoResponse) {
+    //        if (groupInfoResponse.getResult() != null) {
+    //            Groups groups = new Groups(groupInfoResponse.getResult().getId(),
+    //                    groupInfoResponse.getResult().getName(),
+    //                    groupInfoResponse.getResult().getPortraitUri());
+    //            return getPortraitUri(groups);
+    //        }
+    //        return null;
+    //    }
+    //
 
     /**
      * 获取用户头像,头像为空时会生成默认的头像,此默认头像可能已经存在数据库中,不重新生成
@@ -608,7 +607,7 @@ public class DBManager {
      */
     private String getPortrait(Friend friend) {
         if (friend != null) {
-            if (TextUtils.isEmpty(friend.getPortraitUri().toString())) {
+            if (TextUtils.isEmpty(friend.getPortraitUri())) {
                 if (TextUtils.isEmpty(friend.getUserId())) {
                     return null;
                 } else {
@@ -620,12 +619,12 @@ public class DBManager {
                             mUserInfoCache.remove(friend.getUserId());
                         }
                     }
-//                    List<GroupMember> groupMemberList = getGroupMembersWithUserId(friend.getUserId());
-//                    if (groupMemberList != null && groupMemberList.size() > 0) {
-//                        GroupMember groupMember = groupMemberList.get(0);
-//                        if (!TextUtils.isEmpty(groupMember.getPortraitUri().toString()))
-//                            return groupMember.getPortraitUri().toString();
-//                    }
+                    //                    List<GroupMember> groupMemberList = getGroupMembersWithUserId(friend.getUserId());
+                    //                    if (groupMemberList != null && groupMemberList.size() > 0) {
+                    //                        GroupMember groupMember = groupMemberList.get(0);
+                    //                        if (!TextUtils.isEmpty(groupMember.getPortraitUri().toString()))
+                    //                            return groupMember.getPortraitUri().toString();
+                    //                    }
                     String portrait = RongGenerate.generateDefaultAvatar(friend.getName(), friend.getUserId());
                     //缓存信息kit会使用,备注名存在时需要缓存displayName
                     String name = friend.getName();
@@ -637,7 +636,7 @@ public class DBManager {
                     return portrait;
                 }
             } else {
-                return friend.getPortraitUri().toString();
+                return friend.getPortraitUri();
             }
         }
         return null;
@@ -645,7 +644,7 @@ public class DBManager {
 
     private String getPortrait(GroupMember groupMember) {
         if (groupMember != null) {
-            if (TextUtils.isEmpty(groupMember.getPortraitUri().toString())) {
+            if (TextUtils.isEmpty(groupMember.getPortraitUri())) {
                 if (TextUtils.isEmpty(groupMember.getUserId())) {
                     return null;
                 } else {
@@ -659,15 +658,15 @@ public class DBManager {
                     }
                     Friend friend = getFriendById(groupMember.getUserId());
                     if (friend != null) {
-                        if (!TextUtils.isEmpty(friend.getPortraitUri().toString())) {
-                            return friend.getPortraitUri().toString();
+                        if (!TextUtils.isEmpty(friend.getPortraitUri())) {
+                            return friend.getPortraitUri();
                         }
                     }
                     List<GroupMember> groupMemberList = getGroupMembersWithUserId(groupMember.getUserId());
                     if (groupMemberList != null && groupMemberList.size() > 0) {
                         GroupMember member = groupMemberList.get(0);
-                        if (!TextUtils.isEmpty(member.getPortraitUri().toString())) {
-                            return member.getPortraitUri().toString();
+                        if (!TextUtils.isEmpty(member.getPortraitUri())) {
+                            return member.getPortraitUri();
                         }
                     }
                     String portrait = RongGenerate.generateDefaultAvatar(groupMember.getName(), groupMember.getUserId());
@@ -676,7 +675,7 @@ public class DBManager {
                     return portrait;
                 }
             } else {
-                return groupMember.getPortraitUri().toString();
+                return groupMember.getPortraitUri();
             }
         }
         return null;

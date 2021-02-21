@@ -14,7 +14,6 @@ import com.lqr.wechat.app.base.BaseApp;
 import static com.zhy.autolayout.utils.ScreenUtils.getStatusBarHeight;
 import static io.rong.imlib.statistics.Statistics.TAG;
 
-
 /**
  * @创建者 CSDN_LQR
  * @描述 和ui相关的工具类
@@ -62,7 +61,6 @@ public class UIUtils {
             }
         });
     }
-
 
     /**
      * 得到上下文
@@ -211,7 +209,6 @@ public class UIUtils {
     public static int sp2px(int sp) {
         return (int) (TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, getResource().getDisplayMetrics()) + 0.5f);
     }
-
 
     public static int getDisplayWidth() {
         if (screenWidth == 0) {

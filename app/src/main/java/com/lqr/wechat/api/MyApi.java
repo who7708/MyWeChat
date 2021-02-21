@@ -1,6 +1,5 @@
 package com.lqr.wechat.api;
 
-
 import com.lqr.wechat.model.response.AddGroupMemberResponse;
 import com.lqr.wechat.model.response.AddToBlackListResponse;
 import com.lqr.wechat.model.response.AgreeFriendsResponse;
@@ -55,7 +54,7 @@ import rx.Observable;
 
 public interface MyApi {
 
-    public static final String BASE_URL = "http://api.sealtalk.im/";
+    String BASE_URL = "http://api.sealtalk.im/";
 
     //检查手机是否被注册
     @POST("user/check_phone_available")
@@ -180,7 +179,7 @@ public interface MyApi {
     //创建者解散群组
     @POST("group/dismiss")
     Observable<QuitGroupResponse> dissmissGroup(@Body RequestBody body);
-//    Observable<DismissGroupResponse> dissmissGroup(@Body RequestBody body);
+    //    Observable<DismissGroupResponse> dissmissGroup(@Body RequestBody body);
 
     //修改自己的当前的群昵称
     @POST("group/set_display_name")
@@ -209,7 +208,6 @@ public interface MyApi {
     //
     @GET("user/sync/{version}")
     Observable<SyncTotalDataResponse> syncTotalData(@Path("version") String version);
-
 
     //下载图片
     @GET

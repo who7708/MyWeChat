@@ -49,10 +49,10 @@ import retrofit2.adapter.rxjava.HttpException;
 
 public class RecentMessageFgPresenter extends BasePresenter<IRecentMessageFgView> {
 
-    private List<Conversation> mData = new ArrayList<>();
+    private final List<Conversation> mData = new ArrayList<>();
     private LQRAdapterForRecyclerView<Conversation> mAdapter;
     private int mUnreadCountTotal = 0;
-    private LQRNineGridImageViewAdapter mNgivAdapter = new LQRNineGridImageViewAdapter<GroupMember>() {
+    private final LQRNineGridImageViewAdapter mNgivAdapter = new LQRNineGridImageViewAdapter<GroupMember>() {
         @Override
         protected void onDisplayImage(Context context, ImageView imageView, GroupMember groupMember) {
             Glide.with(context).load(groupMember.getPortraitUri()).centerCrop().into(imageView);
@@ -115,8 +115,9 @@ public class RecentMessageFgPresenter extends BasePresenter<IRecentMessageFgView
             mUnreadCountTotal += conversation.getUnreadMessageCount();
         }
         updateTotalUnreadView();
-        if (mAdapter != null)
+        if (mAdapter != null) {
             mAdapter.notifyDataSetChangedWrapper();
+        }
     }
 
     private void updateTotalUnreadView() {
@@ -158,7 +159,7 @@ public class RecentMessageFgPresenter extends BasePresenter<IRecentMessageFgView
                                 .setViewVisibility(R.id.ivHeader, View.GONE);
                     }
 
-//                    helper.setBackgroundColor(R.id.flRoot, item.isTop() ? UIUtils.getColor(R.color.gray7) : UIUtils.getColor(android.R.color.white))
+                    //                    helper.setBackgroundColor(R.id.flRoot, item.isTop() ? UIUtils.getColor(R.color.gray7) : UIUtils.getColor(android.R.color.white))
                     helper.setBackgroundColor(R.id.flRoot, item.isTop() ? R.color.gray8 : android.R.color.white)
                             .setText(R.id.tvCount, item.getUnreadMessageCount() + "")
                             .setViewVisibility(R.id.tvCount, item.getUnreadMessageCount() > 0 ? View.VISIBLE : View.GONE);

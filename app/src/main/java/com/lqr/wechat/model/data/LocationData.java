@@ -1,6 +1,5 @@
 package com.lqr.wechat.model.data;
 
-
 import java.io.Serializable;
 
 public class LocationData implements Serializable {

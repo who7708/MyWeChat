@@ -8,7 +8,7 @@ public class GetTokenResponse {
 
     private int code;
 
-    private  ResultEntity result;
+    private ResultEntity result;
 
     public int getCode() {
         return code;

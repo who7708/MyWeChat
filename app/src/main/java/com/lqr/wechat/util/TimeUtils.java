@@ -20,11 +20,11 @@ public class TimeUtils {
      */
     public static String getMsgFormatTime(long msgTimeMillis) {
         DateTime nowTime = new DateTime();
-//        LogUtils.sf("nowTime = " + nowTime);
+        //        LogUtils.sf("nowTime = " + nowTime);
         DateTime msgTime = new DateTime(msgTimeMillis);
-//        LogUtils.sf("msgTime = " + msgTime);
+        //        LogUtils.sf("msgTime = " + msgTime);
         int days = Math.abs(Days.daysBetween(msgTime, nowTime).getDays());
-//        LogUtils.sf("days = " + days);
+        //        LogUtils.sf("days = " + days);
         if (days < 1) {
             //早上、下午、晚上 1:40
             return getTime(msgTime);

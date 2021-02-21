@@ -21,13 +21,13 @@ public class LQRNineGridImageView<T> extends ViewGroup {
     private int mRowCount;//行数
     private int mColumnCount;//列数
 
-    private int mMaxSize = 9;
+    private final int mMaxSize = 9;
     private int mGap;//宫格间距
 
     private int mWidth;//当前组件宽度
     private int mHeight;//当前组件高度
 
-    private List<ImageView> mImageViewList = new ArrayList<>();
+    private final List<ImageView> mImageViewList = new ArrayList<>();
     private List<T> mImgDataList;
 
     private LQRNineGridImageViewAdapter<T> mAdapter;
@@ -204,8 +204,9 @@ public class LQRNineGridImageView<T> extends ViewGroup {
             int i = 0;
             while (i < data.size()) {
                 ImageView iv = getImageView(i);
-                if (iv == null)
+                if (iv == null) {
                     return;
+                }
                 addView(iv, generateDefaultLayoutParams());
                 i++;
             }

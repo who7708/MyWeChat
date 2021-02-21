@@ -12,9 +12,9 @@ import java.util.Map;
 public class SPUtils {
     private static final String SP_NAME = "common";
     private static SPUtils mSpUtils;
-    private Context context;
-    private SharedPreferences sp;
-    private SharedPreferences.Editor editor;
+    private final Context context;
+    private final SharedPreferences sp;
+    private final SharedPreferences.Editor editor;
 
     private SPUtils(Context context) {
         this.context = context;

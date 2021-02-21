@@ -121,8 +121,9 @@ public class MyApp extends BaseApp implements RongIMClient.OnReceiveMessageListe
                     return false;
                 }
                 if (c != null) {
-                    if (DBManager.getInstance().isMyFriend(contactNotificationMessage.getSourceUserId()))
+                    if (DBManager.getInstance().isMyFriend(contactNotificationMessage.getSourceUserId())) {
                         return false;
+                    }
                     DBManager.getInstance().saveOrUpdateFriend(
                             new Friend(contactNotificationMessage.getSourceUserId(),
                                     c.getSourceUserNickname(),
@@ -202,21 +203,21 @@ public class MyApp extends BaseApp implements RongIMClient.OnReceiveMessageListe
                         List<String> kickedUserIDs = data.getTargetUserIds();
                         DBManager.getInstance().deleteGroupMembers(groupId, kickedUserIDs);
                         //因为操作存在异步，故不在这里发送广播
-//                        BroadcastManager.getInstance(getContext()).sendBroadcast(AppConst.UPDATE_GROUP_MEMBER, groupId);
-//                        BroadcastManager.getInstance(getContext()).sendBroadcast(AppConst.UPDATE_CONVERSATIONS);
+                        //                        BroadcastManager.getInstance(getContext()).sendBroadcast(AppConst.UPDATE_GROUP_MEMBER, groupId);
+                        //                        BroadcastManager.getInstance(getContext()).sendBroadcast(AppConst.UPDATE_CONVERSATIONS);
                     }
                 } else if (groupNotificationMessage.getOperation().equals(GroupNotificationMessage.GROUP_OPERATION_ADD)) {
                     DBManager.getInstance().getGroups(groupId);
                     DBManager.getInstance().getGroupMember(groupId);
                     //因为操作存在异步，故不在这里发送广播
-//                    BroadcastManager.getInstance(getContext()).sendBroadcast(AppConst.UPDATE_GROUP_MEMBER, groupId);
+                    //                    BroadcastManager.getInstance(getContext()).sendBroadcast(AppConst.UPDATE_GROUP_MEMBER, groupId);
                 } else if (groupNotificationMessage.getOperation().equals(GroupNotificationMessage.GROUP_OPERATION_QUIT)) {
                     if (data != null) {
                         List<String> quitUserIDs = data.getTargetUserIds();
                         DBManager.getInstance().deleteGroupMembers(groupId, quitUserIDs);
                         //因为操作存在异步，故不在这里发送广播
-//                        BroadcastManager.getInstance(getContext()).sendBroadcast(AppConst.UPDATE_GROUP_MEMBER, groupId);
-//                        BroadcastManager.getInstance(getContext()).sendBroadcast(AppConst.UPDATE_CONVERSATIONS);
+                        //                        BroadcastManager.getInstance(getContext()).sendBroadcast(AppConst.UPDATE_GROUP_MEMBER, groupId);
+                        //                        BroadcastManager.getInstance(getContext()).sendBroadcast(AppConst.UPDATE_CONVERSATIONS);
                     }
                 } else if (groupNotificationMessage.getOperation().equals(GroupNotificationMessage.GROUP_OPERATION_RENAME)) {
                     if (data != null) {

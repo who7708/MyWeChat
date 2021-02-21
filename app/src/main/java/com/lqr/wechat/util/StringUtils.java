@@ -24,8 +24,9 @@ public class StringUtils {
      * @return
      */
     public static boolean isEmpty(Object o) {
-        if (o instanceof List)
+        if (o instanceof List) {
             return ((List) o).size() == 0;
+        }
         return o == null || o.toString().equals("");
     }
 
@@ -64,7 +65,7 @@ public class StringUtils {
                 sb.append((char) Integer.parseInt(utfString.substring(i + 2, i + 6), 16));
             }
         }
-        sb.append(utfString.substring(pos, utfString.length()));
+        sb.append(utfString.substring(pos));
 
         return sb.toString();
     }

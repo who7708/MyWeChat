@@ -20,7 +20,6 @@ import io.rong.imlib.model.UserInfo;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-
 public class MeFgPresenter extends BasePresenter<IMeFgView> {
 
     private UserInfo mUserInfo;

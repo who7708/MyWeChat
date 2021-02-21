@@ -31,7 +31,7 @@ public class OptionItemView extends View {
      */
     private int mHeight;
 
-    private Context mContext;
+    private final Context mContext;
 
     /**
      * 左图bitmap
@@ -125,15 +125,15 @@ public class OptionItemView extends View {
      */
     private int rightImageMarginRight = -1;
 
-    private Paint mPaint;
+    private final Paint mPaint;
     /**
      * 对文本的约束
      */
-    private Rect mTextBound;
+    private final Rect mTextBound;
     /**
      * 控制整体布局
      */
-    private Rect rect;
+    private final Rect rect;
 
     public OptionItemView(Context context, AttributeSet attrs) {
         super(context, attrs);

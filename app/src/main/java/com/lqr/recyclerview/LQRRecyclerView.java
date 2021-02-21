@@ -7,13 +7,14 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.View;
+
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
 
 import com.lqr.wechat.R;
 
@@ -143,10 +144,10 @@ public class LQRRecyclerView extends RecyclerView {
         init();
         //重新设置布局管理器后需要设置适配器
         Adapter adapter = this.getAdapter();
-        if (adapter != null)
+        if (adapter != null) {
             this.setAdapter(adapter);
+        }
     }
-
 
     /**
      * 平滑滚动到指定位置（注意：对瀑布流无效果）
@@ -287,11 +288,11 @@ public class LQRRecyclerView extends RecyclerView {
      * 当不设置size时，分割线以图片的厚度为标准或不显示分割线（size默认为0）。
      */
     class LQRItemDecoration extends ItemDecoration {
-        private Context mContext;
-        private int mOrientation;
+        private final Context mContext;
+        private final int mOrientation;
         private int mDividerSize = 0;
         private int mDividerColor = Color.BLACK;
-        private Drawable mDividerDrawable;
+        private final Drawable mDividerDrawable;
         private Paint mPaint;
 
         public LQRItemDecoration(Context context, int orientation, int dividerSize, int dividerColor, Drawable dividerDrawable) {
@@ -395,7 +396,6 @@ public class LQRRecyclerView extends RecyclerView {
             }
         }
     }
-
 
     public int getType() {
         return type;

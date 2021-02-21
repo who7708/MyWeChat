@@ -6,7 +6,6 @@ package com.lqr.wechat.model.response;
  */
 public class VersionResponse {
 
-
     /**
      * version : 1.0.5
      * build : 201607181821

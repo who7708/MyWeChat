@@ -30,7 +30,7 @@ import okhttp3.Cookie;
  */
 class IdentifiableCookie {
 
-    private Cookie cookie;
+    private final Cookie cookie;
 
     static List<IdentifiableCookie> decorateAll(Collection<Cookie> cookies) {
         List<IdentifiableCookie> identifiableCookies = new ArrayList<>(cookies.size());
@@ -50,7 +50,9 @@ class IdentifiableCookie {
 
     @Override
     public boolean equals(Object other) {
-        if (!(other instanceof IdentifiableCookie)) return false;
+        if (!(other instanceof IdentifiableCookie)) {
+            return false;
+        }
         IdentifiableCookie that = (IdentifiableCookie) other;
         return that.cookie.name().equals(this.cookie.name())
                 && that.cookie.domain().equals(this.cookie.domain())

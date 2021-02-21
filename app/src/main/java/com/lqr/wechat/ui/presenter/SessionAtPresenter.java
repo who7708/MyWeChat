@@ -53,16 +53,15 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-
 public class SessionAtPresenter extends BaseFragmentPresenter<ISessionAtView> {
 
     public Conversation.ConversationType mConversationType;
-    private String mSessionId;
-    private String mPushCotent = "";//接收方离线时需要显示的push消息内容。
-    private String mPushData = "";//接收方离线时需要在push消息中携带的非显示内容。
-    private int mMessageCount = 5;//一次获取历史消息的最大数量
+    private final String mSessionId;
+    private final String mPushCotent = "";//接收方离线时需要显示的push消息内容。
+    private final String mPushData = "";//接收方离线时需要在push消息中携带的非显示内容。
+    private final int mMessageCount = 5;//一次获取历史消息的最大数量
 
-    private List<Message> mData = new ArrayList<>();
+    private final List<Message> mData = new ArrayList<>();
     private SessionAdapter mAdapter;
     private CustomDialog mSessionMenuDialog;
 
@@ -127,7 +126,7 @@ public class SessionAtPresenter extends BaseFragmentPresenter<ISessionAtView> {
                     FileMessage fileMessage = (FileMessage) content;
                     if (MediaFileUtils.isVideoFileType(fileMessage.getName())) {
                         helper.getView(R.id.bivPic).setOnClickListener(v -> {
-                            boolean isSend = message.getMessageDirection() == Message.MessageDirection.SEND ? true : false;
+                            boolean isSend = message.getMessageDirection() == Message.MessageDirection.SEND;
                             if (isSend) {
                                 if (fileMessage.getLocalPath() != null && new File(fileMessage.getLocalPath().getPath()).exists()) {
                                     FileOpenUtils.openFile(mContext, fileMessage.getLocalPath().getPath());
@@ -253,8 +252,9 @@ public class SessionAtPresenter extends BaseFragmentPresenter<ISessionAtView> {
             UIUtils.postTaskDelay(() -> getView().getRvMsg().smoothMoveToPosition(mData.size() - 1), 200);
         } else {
             mAdapter.notifyDataSetChangedWrapper();
-            if (getView() != null && getView().getRvMsg() != null)
+            if (getView() != null && getView().getRvMsg() != null) {
                 rvMoveToBottom();
+            }
         }
     }
 
@@ -459,12 +459,14 @@ public class SessionAtPresenter extends BaseFragmentPresenter<ISessionAtView> {
     public void sendRedPacketMsg() {
         if (mConversationType == Conversation.ConversationType.PRIVATE) {
             UserInfo userInfo = DBManager.getInstance().getUserInfo(mSessionId);
-            if (userInfo != null)
+            if (userInfo != null) {
                 RedPacketUtil.startRedPacket(mContext, userInfo, RPSendPacketCallback);
+            }
         } else {
             List<GroupMember> groupMembers = DBManager.getInstance().getGroupMembers(mSessionId);
-            if (groupMembers != null)
+            if (groupMembers != null) {
                 RedPacketUtil.startRedPacket(mContext, mSessionId, groupMembers.size(), RPSendPacketCallback);
+            }
         }
     }
 
@@ -527,7 +529,6 @@ public class SessionAtPresenter extends BaseFragmentPresenter<ISessionAtView> {
         });
     }
 
-
     //获取会话中，从指定消息之前、指定数量的最新消息实体
     public void getLocalHistoryMessage() {
         //没有消息第一次调用应设置为:-1。
@@ -542,10 +543,11 @@ public class SessionAtPresenter extends BaseFragmentPresenter<ISessionAtView> {
             @Override
             public void onSuccess(List<Message> messages) {
                 getView().getRefreshLayout().endRefreshing();
-                if (messages == null || messages.size() == 0)
+                if (messages == null || messages.size() == 0) {
                     getRemoteHistoryMessages();
-                else
+                } else {
                     saveHistoryMsg(messages);
+                }
             }
 
             @Override

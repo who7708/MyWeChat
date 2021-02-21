@@ -37,8 +37,8 @@ public class BaseApiRetrofit {
         /*================== common ==================*/
 
         // Log信息拦截器
-//        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-//        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.NONE);//这里可以选择拦截级别
+        //        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        //        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.NONE);//这里可以选择拦截级别
 
         //cache
         File httpCacheDir = new File(MyApp.getContext().getCacheDir(), "response");
@@ -54,7 +54,7 @@ public class BaseApiRetrofit {
                 .addInterceptor(REWRITE_HEADER_CONTROL_INTERCEPTOR)
                 .addInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
                 .addInterceptor(new LoggingInterceptor())
-//                .addInterceptor(loggingInterceptor)//设置 Debug Log 模式
+                //                .addInterceptor(loggingInterceptor)//设置 Debug Log 模式
                 .cache(cache)
                 .cookieJar(cookieJar)
                 .build();
@@ -65,11 +65,11 @@ public class BaseApiRetrofit {
         Request request = chain.request()
                 .newBuilder()
                 .addHeader("Content-Type", "application/json")
-//                .addHeader("Content-Type", "application/json; charset=utf-8")
-//                .addHeader("Accept-Encoding", "gzip, deflate")
-//                .addHeader("Connection", "keep-alive")
-//                .addHeader("Accept", "*/*")
-//                .addHeader("Cookie", "add cookies here")
+                //                .addHeader("Content-Type", "application/json; charset=utf-8")
+                //                .addHeader("Accept-Encoding", "gzip, deflate")
+                //                .addHeader("Connection", "keep-alive")
+                //                .addHeader("Accept", "*/*")
+                //                .addHeader("Cookie", "add cookies here")
                 .build();
         return chain.proceed(request);
     };

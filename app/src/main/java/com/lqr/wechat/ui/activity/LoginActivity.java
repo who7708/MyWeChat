@@ -1,6 +1,5 @@
 package com.lqr.wechat.ui.activity;
 
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -88,12 +87,8 @@ public class LoginActivity extends BaseActivity<ILoginAtView, LoginAtPresenter> 
     private boolean canLogin() {
         int pwdLength = mEtPwd.getText().toString().trim().length();
         int phoneLength = mEtPhone.getText().toString().trim().length();
-        if (pwdLength > 0 && phoneLength > 0) {
-            return true;
-        }
-        return false;
+        return pwdLength > 0 && phoneLength > 0;
     }
-
 
     @Override
     protected LoginAtPresenter createPresenter() {

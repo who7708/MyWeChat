@@ -4,13 +4,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import androidx.viewpager.widget.ViewPager;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.lqr.wechat.R;
 import com.lqr.wechat.app.AppConst;
@@ -31,7 +32,7 @@ import butterknife.BindView;
 
 public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> implements ViewPager.OnPageChangeListener, IMainAtView {
 
-    private List<BaseFragment> mFragmentList = new ArrayList<>(4);
+    private final List<BaseFragment> mFragmentList = new ArrayList<>(4);
 
     @BindView(R.id.ibAddMenu)
     ImageButton mIbAddMenu;
@@ -283,22 +284,14 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 
     @Override
     public void onPageSelected(int position) {
-        if (position == 1) {
-            //如果是“通讯录”页被选中，则显示快速导航条
-            FragmentFactory.getInstance().getContactsFragment().showQuickIndexBar(true);
-        } else {
-            FragmentFactory.getInstance().getContactsFragment().showQuickIndexBar(false);
-        }
+        //如果是“通讯录”页被选中，则显示快速导航条
+        FragmentFactory.getInstance().getContactsFragment().showQuickIndexBar(position == 1);
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
-        if (state != ViewPager.SCROLL_STATE_IDLE) {
-            //滚动过程中隐藏快速导航条
-            FragmentFactory.getInstance().getContactsFragment().showQuickIndexBar(false);
-        } else {
-            FragmentFactory.getInstance().getContactsFragment().showQuickIndexBar(true);
-        }
+        //滚动过程中隐藏快速导航条
+        FragmentFactory.getInstance().getContactsFragment().showQuickIndexBar(state == ViewPager.SCROLL_STATE_IDLE);
     }
 
     private void registerBR() {

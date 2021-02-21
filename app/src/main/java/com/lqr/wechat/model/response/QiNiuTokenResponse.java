@@ -6,7 +6,6 @@ package com.lqr.wechat.model.response;
  */
 public class QiNiuTokenResponse {
 
-
     /**
      * code : 200
      * result : {"target":"qiniu","domain":"7xogjk.com1.z0.glb.clouddn.com","token":"livk5rb3__JZjCtEiMxXpQ8QscLxbNLehwhHySnX:eNVE-zcecMiHjRpOvK1txr2-LgY=:eyJzY29wZSI6InNlYWx0YWxrLWltYWdlIiwiZGVhZGxpbmUiOjE0NTk4MjgzMTh9"}

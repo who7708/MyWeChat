@@ -6,7 +6,6 @@ package com.lqr.wechat.model.response;
  */
 public class CreateGroupResponse {
 
-
     /**
      * code : 200
      * result : {"id":"ArVtlWJSv"}

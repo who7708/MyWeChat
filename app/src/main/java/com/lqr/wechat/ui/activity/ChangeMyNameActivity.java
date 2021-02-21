@@ -39,8 +39,9 @@ public class ChangeMyNameActivity extends BaseActivity {
         mBtnToolbarSend.setText(UIUtils.getString(R.string.save));
         mBtnToolbarSend.setVisibility(View.VISIBLE);
         UserInfo userInfo = DBManager.getInstance().getUserInfo(UserCache.getId());
-        if (userInfo != null)
+        if (userInfo != null) {
             mEtName.setText(userInfo.getName());
+        }
         mEtName.setSelection(mEtName.getText().toString().trim().length());
     }
 
@@ -55,11 +56,7 @@ public class ChangeMyNameActivity extends BaseActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (mEtName.getText().toString().trim().length() > 0) {
-                    mBtnToolbarSend.setEnabled(true);
-                } else {
-                    mBtnToolbarSend.setEnabled(false);
-                }
+                mBtnToolbarSend.setEnabled(mEtName.getText().toString().trim().length() > 0);
             }
 
             @Override

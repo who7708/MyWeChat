@@ -34,12 +34,11 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-
 public class CreateGroupAtPresenter extends BasePresenter<ICreateGroupAtView> {
 
     private String mGroupName = "";
-    private List<Friend> mData = new ArrayList<>();
-    private List<Friend> mSelectedData = new ArrayList<>();
+    private final List<Friend> mData = new ArrayList<>();
+    private final List<Friend> mSelectedData = new ArrayList<>();
     private LQRHeaderAndFooterAdapter mAdapter;
     private LQRAdapterForRecyclerView<Friend> mSelectedAdapter;
 
@@ -63,8 +62,9 @@ public class CreateGroupAtPresenter extends BasePresenter<ICreateGroupAtView> {
                         mData.addAll(friends);
                         //整理排序
                         SortUtils.sortContacts(mData);
-                        if (mAdapter != null)
+                        if (mAdapter != null) {
                             mAdapter.notifyDataSetChanged();
+                        }
                     }
                 }, this::loadError);
     }
@@ -87,7 +87,7 @@ public class CreateGroupAtPresenter extends BasePresenter<ICreateGroupAtView> {
                     } else {
                         helper.setEnabled(R.id.cb, true).setEnabled(R.id.root, true);
                         //没有在已有群中的联系人，根据当前的选中结果判断
-                        cb.setChecked(mSelectedData.contains(item) ? true : false);
+                        cb.setChecked(mSelectedData.contains(item));
                     }
 
                     String str = "";
@@ -183,8 +183,9 @@ public class CreateGroupAtPresenter extends BasePresenter<ICreateGroupAtView> {
     public void createGroup() {
         mSelectedData.add(0, DBManager.getInstance().getFriendById(UserCache.getId()));
         int size = mSelectedData.size();
-        if (size == 0)
+        if (size == 0) {
             return;
+        }
 
         List<String> selectedIds = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {

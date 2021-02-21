@@ -27,10 +27,9 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-
 public class ContactsFgPresenter extends BasePresenter<IContactsFgView> {
 
-    private List<Friend> mData = new ArrayList<>();
+    private final List<Friend> mData = new ArrayList<>();
     private LQRHeaderAndFooterAdapter mAdapter;
 
     public ContactsFgPresenter(BaseActivity context) {
@@ -53,8 +52,9 @@ public class ContactsFgPresenter extends BasePresenter<IContactsFgView> {
                         getView().getFooterView().setText(UIUtils.getString(R.string.count_of_contacts, mData.size()));
                         //整理排序
                         SortUtils.sortContacts(mData);
-                        if (mAdapter != null)
+                        if (mAdapter != null) {
                             mAdapter.notifyDataSetChanged();
+                        }
                     }
                 }, this::loadError);
     }

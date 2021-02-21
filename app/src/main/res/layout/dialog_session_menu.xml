@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="300dp"
@@ -20,11 +20,11 @@
             android:text="@string/copy"
             android:textColor="@color/gray0"
             android:textSize="16sp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <View
             style="@style/Line"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="match_parent"
@@ -37,11 +37,11 @@
             android:text="@string/send_to_friend"
             android:textColor="@color/gray0"
             android:textSize="16sp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <View
             style="@style/Line"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvReCall"
@@ -54,10 +54,9 @@
             android:paddingLeft="20dp"
             android:text="@string/recall"
             android:textColor="@color/gray0"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
-        <View
-            style="@style/Line"/>
+        <View style="@style/Line" />
 
         <TextView
             android:id="@+id/tvDelete"
@@ -70,7 +69,7 @@
             android:paddingLeft="20dp"
             android:text="@string/delete"
             android:textColor="@color/gray0"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
     </LinearLayout>
 </FrameLayout>

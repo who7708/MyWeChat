@@ -71,8 +71,9 @@ public class QRCodeCardActivity extends BaseActivity {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(groups -> {
-                        if (groups == null)
+                        if (groups == null) {
                             return;
+                        }
                         mTvName.setText(groups.getName());
                     });
             mNgiv.setAdapter(new LQRNineGridImageViewAdapter<GroupMember>() {

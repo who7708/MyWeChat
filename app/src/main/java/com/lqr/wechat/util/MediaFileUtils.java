@@ -65,9 +65,9 @@ public class MediaFileUtils {
         }
     }
 
-    private static HashMap<String, MediaFileType> sFileTypeMap
+    private static final HashMap<String, MediaFileType> sFileTypeMap
             = new HashMap<String, MediaFileType>();
-    private static HashMap<String, Integer> sMimeTypeMap
+    private static final HashMap<String, Integer> sMimeTypeMap
             = new HashMap<String, Integer>();
 
     static void addFileType(String extension, int fileType, String mimeType) {
@@ -148,8 +148,9 @@ public class MediaFileUtils {
 
     public static MediaFileType getFileType(String path) {
         int lastDot = path.lastIndexOf(".");
-        if (lastDot < 0)
+        if (lastDot < 0) {
             return null;
+        }
         return sFileTypeMap.get(path.substring(lastDot + 1).toUpperCase());
     }
 

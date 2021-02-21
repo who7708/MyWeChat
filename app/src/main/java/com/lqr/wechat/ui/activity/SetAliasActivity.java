@@ -57,8 +57,9 @@ public class SetAliasActivity extends BaseActivity {
     @Override
     public void initData() {
         mFriend = DBManager.getInstance().getFriendById(mFriendId);
-        if (mFriend != null)
+        if (mFriend != null) {
             mEtAlias.setText(mFriend.getDisplayName());
+        }
         mEtAlias.setSelection(mEtAlias.getText().toString().trim().length());
     }
 
@@ -72,7 +73,7 @@ public class SetAliasActivity extends BaseActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mBtnToolbarSend.setEnabled(mEtAlias.getText().toString().trim().length() > 0 ? true : false);
+                mBtnToolbarSend.setEnabled(mEtAlias.getText().toString().trim().length() > 0);
             }
 
             @Override

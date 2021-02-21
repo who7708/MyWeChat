@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray5"
     android:orientation="vertical">
 
-    <include
-        layout="@layout/include_toolbar"
-        />
+    <include layout="@layout/include_toolbar" />
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <LinearLayout
         android:id="@+id/llNoNewFriend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +22,7 @@
             android:layout_marginTop="190px"
             android:text="@string/no_recommend_friend"
             android:textColor="@color/gray3"
-            android:textSize="42px"/>
+            android:textSize="42px" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,7 +30,7 @@
             android:layout_marginTop="28px"
             android:text="@string/no_recommend_friend_tip"
             android:textColor="@color/gray3"
-            android:textSize="30px"/>
+            android:textSize="30px" />
 
         <com.lqr.optionitemview.OptionItemView
             style="@style/OptionItem"
@@ -45,18 +42,18 @@
             app:left_src="@mipmap/ic_phone"
             app:left_text="@string/add_phone_contact"
             app:left_text_color="@color/black0"
-            app:left_text_size="16sp"/>
+            app:left_text_size="16sp" />
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </LinearLayout>
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <LinearLayout
         android:id="@+id/llHasNewFriend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:visibility="gone">
 
-        <com.zhy.autolayout.AutoLinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30px"
@@ -80,9 +77,9 @@
                 android:hint="@string/wechat_qq_phone"
                 android:textColorHint="@color/gray3"
                 android:textSize="14sp"
-                android:visibility="visible"/>
+                android:visibility="visible" />
 
-        </com.zhy.autolayout.AutoLinearLayout>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvNewFriend"
@@ -93,16 +90,15 @@
             android:layout_marginTop="30px"
             android:text="@string/new_friend"
             android:textColor="@color/gray1"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <com.lqr.recyclerview.LQRRecyclerView
             android:id="@+id/rvNewFriend"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:rv_divider_color="@color/line"
-            app:rv_divider_size="1px"/>
+            app:rv_divider_size="1px" />
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </LinearLayout>
 
-
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

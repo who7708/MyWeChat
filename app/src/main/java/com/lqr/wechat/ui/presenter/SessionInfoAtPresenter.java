@@ -43,13 +43,11 @@ import rx.schedulers.Schedulers;
 import static com.lqr.wechat.ui.activity.SessionActivity.SESSION_TYPE_GROUP;
 import static com.lqr.wechat.ui.activity.SessionActivity.SESSION_TYPE_PRIVATE;
 
-
 public class SessionInfoAtPresenter extends BasePresenter<ISessionInfoAtView> {
 
-
-    private Conversation.ConversationType mConversationType;
-    private String mSessionId;
-    private List<GroupMember> mData = new ArrayList<>();
+    private final Conversation.ConversationType mConversationType;
+    private final String mSessionId;
+    private final List<GroupMember> mData = new ArrayList<>();
     private LQRAdapterForRecyclerView<GroupMember> mAdapter;
     private boolean mIsManager = false;
     public boolean mIsCreateNewGroup = false;
@@ -264,8 +262,9 @@ public class SessionInfoAtPresenter extends BasePresenter<ISessionInfoAtView> {
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(groups -> {
-                            if (groups == null)
+                            if (groups == null) {
                                 return;
+                            }
                             mGroups = groups;
                             //设置群信息
                             getView().getOivGroupName().setRightText(groups.getName());
@@ -296,8 +295,9 @@ public class SessionInfoAtPresenter extends BasePresenter<ISessionInfoAtView> {
     }
 
     public void quit() {
-        if (mGroups == null)
+        if (mGroups == null) {
             return;
+        }
         String tip = "";
         if (mGroups.getRole().equalsIgnoreCase("0")) {
             tip = UIUtils.getString(R.string.are_you_sure_to_dismiss_this_group);
@@ -402,7 +402,6 @@ public class SessionInfoAtPresenter extends BasePresenter<ISessionInfoAtView> {
         });
         mSetDisplayNameDialog.show();
     }
-
 
     private void setDisplayNameError(Throwable throwable) {
         LogUtils.sf(throwable.getLocalizedMessage());

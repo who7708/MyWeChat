@@ -35,10 +35,9 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
-
 public class NewFriendAtPresenter extends BasePresenter<INewFriendAtView> {
 
-    private List<UserRelationshipResponse.ResultEntity> mData = new ArrayList<>();
+    private final List<UserRelationshipResponse.ResultEntity> mData = new ArrayList<>();
     private LQRAdapterForRecyclerView<UserRelationshipResponse.ResultEntity> mAdapter;
 
     public NewFriendAtPresenter(BaseActivity context) {
@@ -77,8 +76,9 @@ public class NewFriendAtPresenter extends BasePresenter<INewFriendAtView> {
                             getView().getLlHasNewFriend().setVisibility(View.VISIBLE);
                             mData.clear();
                             mData.addAll(result);
-                            if (mAdapter != null)
+                            if (mAdapter != null) {
                                 mAdapter.notifyDataSetChangedWrapper();
+                            }
                         } else {
                             getView().getLlNoNewFriend().setVisibility(View.VISIBLE);
                         }

@@ -1,9 +1,10 @@
 package com.lqr.wechat.util;
 
 import android.app.ProgressDialog;
-import androidx.fragment.app.FragmentActivity;
 import android.text.TextUtils;
 import android.widget.Toast;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.lqr.wechat.db.DBManager;
 import com.lqr.wechat.model.cache.UserCache;
@@ -28,8 +29,9 @@ import io.rong.imlib.model.UserInfo;
 public class RedPacketUtil {
 
     public static void startRedPacket(FragmentActivity activity, UserInfo toUserInfo, RPSendPacketCallback callback) {
-        if (toUserInfo == null)
+        if (toUserInfo == null) {
             return;
+        }
         RPRedPacketUtil.getInstance().startRedPacket(activity, RPConstant.RP_ITEM_TYPE_SINGLE, genPersonalRedPacketInfo(toUserInfo.getUserId(), toUserInfo.getName(), toUserInfo.getPortraitUri().toString()), callback);
     }
 
@@ -122,9 +124,9 @@ public class RedPacketUtil {
         return redPacketInfo;
     }
 
-//    public static void startRedPacket(FragmentActivity activity, int itemType, boolean isExclusive, RPSendPacketCallback callback) {
-//        RPRedPacketUtil.getInstance().startRedPacket(activity, itemType, getRedPacketInfo(itemType, isExclusive), callback);
-//    }
+    //    public static void startRedPacket(FragmentActivity activity, int itemType, boolean isExclusive, RPSendPacketCallback callback) {
+    //        RPRedPacketUtil.getInstance().startRedPacket(activity, itemType, getRedPacketInfo(itemType, isExclusive), callback);
+    //    }
     /**
      * 封装进入红包页面所需参数
      *
@@ -135,35 +137,34 @@ public class RedPacketUtil {
      * @param isExclusive 是否为专属红包
      * @return RedPacketInfo
      */
-//    private static RedPacketInfo getRedPacketInfo(int itemType, boolean isExclusive) {
-//        RedPacketInfo redPacketInfo = getCurrentUserInfo();
-//        //项目类型
-//        if (itemType == RPConstant.RP_ITEM_TYPE_GROUP) {
-//            //群聊红包传入 ：群组Id和群成员个数
-//            redPacketInfo.toGroupId = "testGroupId";
-//            redPacketInfo.groupMemberCount = mGroupMemberCount;
-//            //使用专属红包功能需要设置如下回调函数，不需要可不设置。
-//            if (isExclusive) {
-//                RedPacket.getInstance().setRPGroupMemberListener(new RPGroupMemberListener() {
-//                    @Override
-//                    public void getGroupMember(String groupId, RPValueCallback<List<RPUserBean>> rpValueCallback) {
-//                        rpValueCallback.onSuccess(generateGroupMemberList(mGroupMemberCount));
-//                    }
-//                });
-//            } else {
-//                //Demo演示使用，如果不需要专属红包，不设置该回调即可。
-//                RedPacket.getInstance().setRPGroupMemberListener(null);
-//            }
-//        } else {
-//            //单聊红包、小额随机红包和转账都只传入 ：接收者Id、昵称和头像
-//            UserInfo userInfo = DBManager.getInstance().getUserInfo(UserCache.getId());
-//            redPacketInfo.toUserId = UserCache.getId();
-//            redPacketInfo.toNickName = userInfo != null ? userInfo.getName() : "CSDN_LQR";
-//            redPacketInfo.toAvatarUrl = userInfo != null ? userInfo.getPortraitUri().toString() : "http://avatar.csdn.net/6/6/F/1_csdn_lqr.jpg";
-//        }
-//        return redPacketInfo;
-//    }
-
+    //    private static RedPacketInfo getRedPacketInfo(int itemType, boolean isExclusive) {
+    //        RedPacketInfo redPacketInfo = getCurrentUserInfo();
+    //        //项目类型
+    //        if (itemType == RPConstant.RP_ITEM_TYPE_GROUP) {
+    //            //群聊红包传入 ：群组Id和群成员个数
+    //            redPacketInfo.toGroupId = "testGroupId";
+    //            redPacketInfo.groupMemberCount = mGroupMemberCount;
+    //            //使用专属红包功能需要设置如下回调函数，不需要可不设置。
+    //            if (isExclusive) {
+    //                RedPacket.getInstance().setRPGroupMemberListener(new RPGroupMemberListener() {
+    //                    @Override
+    //                    public void getGroupMember(String groupId, RPValueCallback<List<RPUserBean>> rpValueCallback) {
+    //                        rpValueCallback.onSuccess(generateGroupMemberList(mGroupMemberCount));
+    //                    }
+    //                });
+    //            } else {
+    //                //Demo演示使用，如果不需要专属红包，不设置该回调即可。
+    //                RedPacket.getInstance().setRPGroupMemberListener(null);
+    //            }
+    //        } else {
+    //            //单聊红包、小额随机红包和转账都只传入 ：接收者Id、昵称和头像
+    //            UserInfo userInfo = DBManager.getInstance().getUserInfo(UserCache.getId());
+    //            redPacketInfo.toUserId = UserCache.getId();
+    //            redPacketInfo.toNickName = userInfo != null ? userInfo.getName() : "CSDN_LQR";
+    //            redPacketInfo.toAvatarUrl = userInfo != null ? userInfo.getPortraitUri().toString() : "http://avatar.csdn.net/6/6/F/1_csdn_lqr.jpg";
+    //        }
+    //        return redPacketInfo;
+    //    }
 
     /**
      * 模拟获取当前用户信息的方法

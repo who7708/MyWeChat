@@ -23,7 +23,6 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
         DBManager.getInstance().getAllUserInfo();
     }
 
-
     /**
      * 建立与融云服务器的连接
      *

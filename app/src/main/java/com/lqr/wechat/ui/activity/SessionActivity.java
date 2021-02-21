@@ -152,12 +152,14 @@ public class SessionActivity extends BaseFragmentActivity<ISessionAtView, Sessio
     private void setTitle() {
         if (mConversationType == Conversation.ConversationType.PRIVATE) {
             UserInfo userInfo = DBManager.getInstance().getUserInfo(mSessionId);
-            if (userInfo != null)
+            if (userInfo != null) {
                 setToolbarTitle(userInfo.getName());
+            }
         } else if (mConversationType == Conversation.ConversationType.GROUP) {
             Groups groups = DBManager.getInstance().getGroupsById(mSessionId);
-            if (groups != null)
+            if (groups != null) {
                 setToolbarTitle(groups.getName());
+            }
         }
     }
 
@@ -171,7 +173,7 @@ public class SessionActivity extends BaseFragmentActivity<ISessionAtView, Sessio
         mIbToolbarMore.setOnClickListener(v -> {
             Intent intent = new Intent(SessionActivity.this, SessionInfoActivity.class);
             intent.putExtra("sessionId", mSessionId);
-            intent.putExtra("sessionType", mConversationType == mConversationType.PRIVATE ? SessionActivity.SESSION_TYPE_PRIVATE : SessionActivity.SESSION_TYPE_GROUP);
+            intent.putExtra("sessionType", mConversationType == Conversation.ConversationType.PRIVATE ? SessionActivity.SESSION_TYPE_PRIVATE : SessionActivity.SESSION_TYPE_GROUP);
             jumpToActivity(intent);
         });
         mElEmotion.setEmotionSelectedListener(this);
@@ -313,7 +315,7 @@ public class SessionActivity extends BaseFragmentActivity<ISessionAtView, Sessio
                     this.mStateTV.setVisibility(View.VISIBLE);
                     this.mStateTV.setText(R.string.voice_rec);
                     this.mStateTV.setBackgroundResource(R.drawable.bg_voice_popup);
-                    this.mTimerTV.setText(String.format("%s", new Object[]{Integer.valueOf(counter)}));
+                    this.mTimerTV.setText(String.format("%s", Integer.valueOf(counter)));
                     this.mTimerTV.setVisibility(View.VISIBLE);
                 }
             }
@@ -410,12 +412,8 @@ public class SessionActivity extends BaseFragmentActivity<ISessionAtView, Sessio
         int[] location = new int[2];
         view.getLocationOnScreen(location);
 
-        if (event.getRawX() < location[0] || event.getRawX() > location[0] + view.getWidth()
-                || event.getRawY() < location[1] - 40) {
-            return true;
-        }
-
-        return false;
+        return event.getRawX() < location[0] || event.getRawX() > location[0] + view.getWidth()
+                || event.getRawY() < location[1] - 40;
     }
 
     @Override
@@ -450,8 +448,9 @@ public class SessionActivity extends BaseFragmentActivity<ISessionAtView, Sessio
                                 imageFileSource = ImageUtils.genThumbImgFile(imageItem.path);
                                 imageFileThumb = ImageUtils.genThumbImgFile(imageFileSource.getAbsolutePath());
                             }
-                            if (imageFileSource != null && imageFileSource != null)
+                            if (imageFileSource != null && imageFileSource != null) {
                                 mPresenter.sendImgMsg(imageFileThumb, imageFileSource);
+                            }
                         }
                     }
                 }
@@ -535,22 +534,22 @@ public class SessionActivity extends BaseFragmentActivity<ISessionAtView, Sessio
                     //匹配对方正在输入的是文本消息还是语音消息
                     if (objectName.equals(textTag.value())) {
                         //显示“对方正在输入”
-//                        setToolbarSubTitle(UIUtils.getString(R.string.SET_TEXT_TYPING_TITLE));
+                        //                        setToolbarSubTitle(UIUtils.getString(R.string.SET_TEXT_TYPING_TITLE));
                         setToolbarTitle(UIUtils.getString(R.string.SET_TEXT_TYPING_TITLE));
                     } else if (objectName.equals(voiceTag.value())) {
                         //显示“对方正在讲话”
-//                        setToolbarSubTitle(UIUtils.getString(R.string.SET_VOICE_TYPING_TITLE));
+                        //                        setToolbarSubTitle(UIUtils.getString(R.string.SET_VOICE_TYPING_TITLE));
                         setToolbarTitle(UIUtils.getString(R.string.SET_VOICE_TYPING_TITLE));
                     }
                 } else {
                     //当前会话没有用户正在输入，标题栏仍显示原来标题
-//                    setToolbarSubTitle("");
+                    //                    setToolbarSubTitle("");
                     setTitle();
                 }
             }
         });
         //监听撤回
-        RongIMClient.getInstance().setRecallMessageListener((messageId, recallNotificationMessage) -> mPresenter.recallMessageFromListener(messageId, recallNotificationMessage));
+        RongIMClient.setRecallMessageListener((messageId, recallNotificationMessage) -> mPresenter.recallMessageFromListener(messageId, recallNotificationMessage));
     }
 
     private void unRegisterBR() {
@@ -686,13 +685,13 @@ public class SessionActivity extends BaseFragmentActivity<ISessionAtView, Sessio
 
     @Override
     public void onEmojiSelected(String key) {
-//        LogUtils.e("onEmojiSelected : " + key);
+        //        LogUtils.e("onEmojiSelected : " + key);
     }
 
     @Override
     public void onStickerSelected(String categoryName, String stickerName, String stickerBitmapPath) {
-//        LogUtils.e("onStickerSelected : categoryName = " + categoryName + " , stickerName = " + stickerName);
-//        LogUtils.e("onStickerSelected : stickerBitmapPath = " + stickerBitmapPath);
+        //        LogUtils.e("onStickerSelected : categoryName = " + categoryName + " , stickerName = " + stickerName);
+        //        LogUtils.e("onStickerSelected : stickerBitmapPath = " + stickerBitmapPath);
         mPresenter.sendFileMsg(new File(stickerBitmapPath));
     }
 

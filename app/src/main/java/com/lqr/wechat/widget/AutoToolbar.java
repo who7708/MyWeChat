@@ -2,11 +2,12 @@ package com.lqr.wechat.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.Toolbar;
 
 import com.lqr.wechat.R;
 import com.zhy.autolayout.AutoLayoutInfo;
@@ -21,8 +22,8 @@ import java.lang.reflect.Field;
  */
 public class AutoToolbar extends Toolbar {
     private static final int NO_VALID = -1;
-    private int mTextSize;
-    private int mSubTextSize;
+    private final int mTextSize;
+    private final int mSubTextSize;
     private final AutoLayoutHelper mHelper = new AutoLayoutHelper(this);
 
     public AutoToolbar(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -39,18 +40,18 @@ public class AutoToolbar extends Toolbar {
         mTextSize = loadTextSizeFromTextAppearance(titleTextAppearance);
         mSubTextSize = loadTextSizeFromTextAppearance(subtitleTextAppearance);
 
-//        TypedArray menuA = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Theme,
-//                defStyleAttr, R.style.ThemeOverlay_AppCompat);
-//        int menuTextAppearance = menuA.getResourceId(R.styleable.Theme_actionBarTheme,
-//                R.style.ThemeOverlay_AppCompat_ActionBar);
-//        int menuTextSize = loadTextSizeFromTextAppearance(menuTextAppearance);
+        //        TypedArray menuA = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Theme,
+        //                defStyleAttr, R.style.ThemeOverlay_AppCompat);
+        //        int menuTextAppearance = menuA.getResourceId(R.styleable.Theme_actionBarTheme,
+        //                R.style.ThemeOverlay_AppCompat_ActionBar);
+        //        int menuTextSize = loadTextSizeFromTextAppearance(menuTextAppearance);
 
         //防止 menu 定义 textSize，而 Toolbar 无定义 textSize 时，title 的 textSize 随 menu 变化
-//        if (mTextSize == NO_VALID) mTextSize = menuTextSize;
-//        if (mSubTextSize == NO_VALID) mSubTextSize = menuTextSize;
+        //        if (mTextSize == NO_VALID) mTextSize = menuTextSize;
+        //        if (mSubTextSize == NO_VALID) mSubTextSize = menuTextSize;
 
         a.recycle();
-//        menuA.recycle();
+        //        menuA.recycle();
     }
 
     public AutoToolbar(Context context, AttributeSet attrs) {
@@ -65,8 +66,9 @@ public class AutoToolbar extends Toolbar {
         TypedArray a = getContext().obtainStyledAttributes(textAppearanceResId,
                 R.styleable.TextAppearance);
         try {
-            if (!DimenUtils.isPxVal(a.peekValue(R.styleable.TextAppearance_android_textSize)))
+            if (!DimenUtils.isPxVal(a.peekValue(R.styleable.TextAppearance_android_textSize))) {
                 return NO_VALID;
+            }
             return a.getDimensionPixelSize(R.styleable.TextAppearance_android_textSize, NO_VALID);
         } finally {
             a.recycle();
@@ -75,11 +77,13 @@ public class AutoToolbar extends Toolbar {
 
     private void setUpTitleTextSize() {
         CharSequence title = getTitle();
-        if (!TextUtils.isEmpty(title) && mTextSize != NO_VALID)
+        if (!TextUtils.isEmpty(title) && mTextSize != NO_VALID) {
             setUpTitleTextSize("mTitleTextView", mTextSize);
+        }
         CharSequence subtitle = getSubtitle();
-        if (!TextUtils.isEmpty(subtitle) && mSubTextSize != NO_VALID)
+        if (!TextUtils.isEmpty(subtitle) && mSubTextSize != NO_VALID) {
             setUpTitleTextSize("mSubtitleTextView", mSubTextSize);
+        }
     }
 
     private void setUpTitleTextSize(String name, int val) {

@@ -4,12 +4,13 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
-import androidx.annotation.NonNull;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
+
+import androidx.annotation.NonNull;
 
 /**
  * @创建者 林洽锐
@@ -73,7 +74,6 @@ public class PopupWindowUtils {
         return getPopupWindowAtLocation(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, parentView, gravityType, xoff, yoff);
     }
 
-
     /**
      * 得到一个自动识别在目标控件上方或下方的pupupwindow并显示
      *
@@ -97,7 +97,6 @@ public class PopupWindowUtils {
 
         return popupWindow;
     }
-
 
     /**
      * 得到在指定某个视图外的popupwindow并显示
@@ -135,7 +134,6 @@ public class PopupWindowUtils {
         return popupWindow;
     }
 
-
     /**
      * 判断popupWindow是否显示在条目的下方
      *
@@ -158,11 +156,9 @@ public class PopupWindowUtils {
         // 得到itemView距离屏幕底部的距离
         int distance = screenHeight - itemViewY - itemView.getHeight();
 
-        if (distance < itemView.getHeight()) {// 条目下方放不下popupWindow
-            return false;
-        } else {// 条目下方放得下popupWindow
-            return true;
-        }
+        // 条目下方放不下popupWindow
+        // 条目下方放得下popupWindow
+        return distance >= itemView.getHeight();
     }
 
     /**
@@ -212,6 +208,5 @@ public class PopupWindowUtils {
         lp.alpha = 1f;
         activity.getWindow().setAttributes(lp);
     }
-
 
 }

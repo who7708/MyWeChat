@@ -65,7 +65,6 @@ public class ImageUtils {
         return bitmap;
     }
 
-
     // 图片sd地址 上传服务器时把图片调用下面方法压缩后 保存到临时文件夹 图片压缩后小于100KB，失真度不明显
     public static Bitmap revitionImageSize(String path) throws IOException {
         BufferedInputStream in = new BufferedInputStream(new FileInputStream(
@@ -93,9 +92,9 @@ public class ImageUtils {
             i += 1;
         }
         // 当机型为三星时图片翻转
-//		bitmap = Photo.photoAdapter(path, bitmap);
-//		System.out.println("-----压缩后尺寸高度：" + bitmap.getHeight());
-//		System.out.println("-----压缩后尺寸宽度度：" + bitmap.getWidth());
+        //		bitmap = Photo.photoAdapter(path, bitmap);
+        //		System.out.println("-----压缩后尺寸高度：" + bitmap.getHeight());
+        //		System.out.println("-----压缩后尺寸宽度度：" + bitmap.getWidth());
         return bitmap;
     }
 
@@ -163,11 +162,13 @@ public class ImageUtils {
         opt.inSampleSize = 1;
         //根据屏的大小和图片大小计算出缩放比例
         if (picWidth > picHeight) {
-            if (picWidth > screenWidth)
+            if (picWidth > screenWidth) {
                 opt.inSampleSize = picWidth / screenWidth;
+            }
         } else {
-            if (picHeight > screenHeight)
+            if (picHeight > screenHeight) {
                 opt.inSampleSize = picHeight / screenHeight;
+            }
         }
 
         //这次再真正地生成一个有像素的，经过缩放了的bitmap
@@ -203,15 +204,15 @@ public class ImageUtils {
         int wh = w * h;
         int div = radius + radius + 1;
 
-        int r[] = new int[wh];
-        int g[] = new int[wh];
-        int b[] = new int[wh];
+        int[] r = new int[wh];
+        int[] g = new int[wh];
+        int[] b = new int[wh];
         int rsum, gsum, bsum, x, y, i, p, yp, yi, yw;
-        int vmin[] = new int[Math.max(w, h)];
+        int[] vmin = new int[Math.max(w, h)];
 
         int divsum = (div + 1) >> 1;
         divsum *= divsum;
-        int dv[] = new int[256 * divsum];
+        int[] dv = new int[256 * divsum];
         for (i = 0; i < 256 * divsum; i++) {
             dv[i] = (i / divsum);
         }
@@ -387,12 +388,13 @@ public class ImageUtils {
         return (bitmap);
     }
 
-
     public static File genThumbImgFile(String srcImgPath) {
-        if (thumbImgDir == null)
+        if (thumbImgDir == null) {
             thumbImgDir = new File(thumbImgDirPath);
-        if (!thumbImgDir.exists())
+        }
+        if (!thumbImgDir.exists()) {
             thumbImgDir.mkdirs();
+        }
         String thumbImgName = SystemClock.currentThreadTimeMillis() + FileUtils.getFileNameFromPath(srcImgPath);
         File imageFileThumb = null;
         try {

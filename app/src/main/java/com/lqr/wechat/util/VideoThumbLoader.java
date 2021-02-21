@@ -6,8 +6,9 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
-import androidx.collection.LruCache;
 import android.widget.ImageView;
+
+import androidx.collection.LruCache;
 
 /**
  * @创建者 CSDN_LQR
@@ -31,9 +32,9 @@ public class VideoThumbLoader {
     }
 
     // 创建cache
-    private LruCache<String, Bitmap> lruCache;
+    private final LruCache<String, Bitmap> lruCache;
 
-    private Handler mHandler = new Handler() {
+    private final Handler mHandler = new Handler() {
 
         public void handleMessage(Message msg) {
 
@@ -84,10 +85,10 @@ public class VideoThumbLoader {
     }
 
     class MyBobAsynctack extends AsyncTask<String, Void, Bitmap> {
-        private ImageView imgView;
-        private String path;
-        private int width;
-        private int height;
+        private final ImageView imgView;
+        private final String path;
+        private final int width;
+        private final int height;
 
         public MyBobAsynctack(ImageView imageView, String path, int width,
                               int height) {

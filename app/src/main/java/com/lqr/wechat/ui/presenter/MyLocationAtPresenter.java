@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MyLocationAtPresenter extends BasePresenter<IMyLocationAtView> {
 
-    private List<Geo2AddressResultObject.ReverseAddressResult.Poi> mData = new ArrayList<>();
+    private final List<Geo2AddressResultObject.ReverseAddressResult.Poi> mData = new ArrayList<>();
     private int mSelectedPosi = 0;
     private LQRAdapterForRecyclerView<Geo2AddressResultObject.ReverseAddressResult.Poi> mAdapter;
 
@@ -27,13 +27,13 @@ public class MyLocationAtPresenter extends BasePresenter<IMyLocationAtView> {
     }
 
     public void loadData(Geo2AddressResultObject obj) {
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("\n地址：" + obj.result.address);
-//        sb.append("\npois:");
-//        for (Geo2AddressResultObject.ReverseAddressResult.Poi poi : obj.result.pois) {
-//            sb.append("\n\t" + poi.title);
-//        }
-//        LogUtils.e(sb.toString());
+        //        StringBuilder sb = new StringBuilder();
+        //        sb.append("\n地址：" + obj.result.address);
+        //        sb.append("\npois:");
+        //        for (Geo2AddressResultObject.ReverseAddressResult.Poi poi : obj.result.pois) {
+        //            sb.append("\n\t" + poi.title);
+        //        }
+        //        LogUtils.e(sb.toString());
         mData.clear();
         mData.addAll(obj.result.pois);
         setAdapter();
@@ -68,7 +68,6 @@ public class MyLocationAtPresenter extends BasePresenter<IMyLocationAtView> {
             mContext.finish();
         }
     }
-
 
     //    获取位置静态图
     //    http://apis.map.qq.com/ws/staticmap/v2/?center=39.8802147,116.415794&zoom=10&size=600*300&maptype=landform&markers=size:large|color:0xFFCCFF|label:k|39.8802147,116.415794&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77

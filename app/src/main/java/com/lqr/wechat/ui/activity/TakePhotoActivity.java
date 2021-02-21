@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.os.SystemClock;
+
 import androidx.core.content.ContextCompat;
 
 import com.cjt2325.cameralibrary.JCameraView;
@@ -24,13 +25,11 @@ import kr.co.namee.permissiongen.PermissionFail;
 import kr.co.namee.permissiongen.PermissionGen;
 import kr.co.namee.permissiongen.PermissionSuccess;
 
-
 /**
  * @创建者 CSDN_LQR
  * @描述 拍照界面
  */
 public class TakePhotoActivity extends BaseActivity {
-
 
     private JCameraView mJCameraView;
 
@@ -38,11 +37,12 @@ public class TakePhotoActivity extends BaseActivity {
     public void init() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED)
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             PermissionGen.with(this)
                     .addRequestCode(100)
                     .permissions(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO)
                     .request();
+        }
     }
 
     @Override
@@ -54,8 +54,9 @@ public class TakePhotoActivity extends BaseActivity {
         mJCameraView.setAutoFoucs(false);
         //设置小视频保存路径
         File file = new File(AppConst.VIDEO_SAVE_DIR);
-        if (!file.exists())
+        if (!file.exists()) {
             file.mkdirs();
+        }
         mJCameraView.setSaveVideoPath(AppConst.VIDEO_SAVE_DIR);
     }
 
@@ -95,11 +96,11 @@ public class TakePhotoActivity extends BaseActivity {
     public void permissionSuccess() {
         UIUtils.postTaskDelay(() -> {
             recreate();
-//            Intent intent = getIntent();
-//            finish();
-//            startActivity(intent);
+            //            Intent intent = getIntent();
+            //            finish();
+            //            startActivity(intent);
         }, 500);
-//        UIUtils.postTaskSafely(() -> recreate());
+        //        UIUtils.postTaskSafely(() -> recreate());
     }
 
     @PermissionFail(requestCode = 100)
@@ -110,15 +111,17 @@ public class TakePhotoActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (mJCameraView != null)
+        if (mJCameraView != null) {
             mJCameraView.onResume();
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if (mJCameraView != null)
+        if (mJCameraView != null) {
             mJCameraView.onPause();
+        }
     }
 
     @Override

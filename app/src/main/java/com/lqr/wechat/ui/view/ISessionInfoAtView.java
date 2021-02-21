@@ -1,6 +1,5 @@
 package com.lqr.wechat.ui.view;
 
-
 import android.widget.Button;
 
 import com.kyleduo.switchbutton.SwitchButton;

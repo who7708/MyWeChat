@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root"
     android:layout_width="match_parent"
@@ -18,9 +17,9 @@
         android:text="A"
         android:textColor="#989898"
         android:textSize="25px"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100px"
         android:background="@drawable/selector_common_item"
@@ -35,7 +34,7 @@
             android:layout_width="72px"
             android:layout_height="72px"
             android:scaleType="centerCrop"
-            android:src="@mipmap/default_header"/>
+            android:src="@mipmap/default_header" />
 
         <!--九宫格头像-->
         <com.lqr.ninegridimageview.LQRNineGridImageView
@@ -44,7 +43,7 @@
             android:layout_height="72px"
             android:background="@color/gray9"
             android:visibility="gone"
-            app:imgGap="1px"/>
+            app:imgGap="1px" />
 
         <TextView
             android:id="@+id/tvName"
@@ -55,7 +54,7 @@
             android:singleLine="true"
             android:text="沧晓"
             android:textColor="@color/gray0"
-            android:textSize="32px"/>
+            android:textSize="32px" />
 
         <CheckBox
             android:id="@+id/cb"
@@ -64,16 +63,15 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/item_margin_left_and_right"
             android:clickable="false"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </LinearLayout>
 
     <View
         android:id="@+id/vLine"
         style="@style/Line"
         android:layout_marginLeft="@dimen/item_margin_left_and_right"
         android:layout_marginRight="@dimen/item_margin_left_and_right"
-        android:visibility="visible"
-        />
+        android:visibility="visible" />
 
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

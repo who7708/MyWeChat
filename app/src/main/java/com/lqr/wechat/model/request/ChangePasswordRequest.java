@@ -1,6 +1,5 @@
 package com.lqr.wechat.model.request;
 
-
 /**
  * Created by AMing on 15/12/24.
  * Company RongCloud

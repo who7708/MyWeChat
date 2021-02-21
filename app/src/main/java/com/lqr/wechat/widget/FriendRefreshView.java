@@ -4,9 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
-import androidx.core.view.MotionEventCompat;
-import androidx.core.view.ViewCompat;
-import androidx.customview.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -17,8 +14,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.lqr.wechat.R;
+import androidx.core.view.MotionEventCompat;
+import androidx.core.view.ViewCompat;
+import androidx.customview.widget.ViewDragHelper;
 
+import com.lqr.wechat.R;
 
 /**
  * 仿微信朋友圈列表页下拉刷新控件
@@ -45,13 +45,13 @@ public class FriendRefreshView extends ViewGroup implements OnDetectScrollListen
     private boolean bDraging = false;
 
     //圆形加载指示器最大top
-    private int rainbowMaxTop = 80;
+    private final int rainbowMaxTop = 80;
     //圆形加载指示器刷新时的top
-    private int rainbowStickyTop = 80;
+    private final int rainbowStickyTop = 80;
     //圆形加载指示器初始top
-    private int rainbowStartTop = -120;
+    private final int rainbowStartTop = -120;
     //圆形加载指示器的半径
-    private int rainbowRadius = 100;
+    private final int rainbowRadius = 100;
     private int rainbowTop = -120;
     //圆形加载指示器旋转的角度
     private int rainbowRotateAngle = 0;
@@ -62,7 +62,7 @@ public class FriendRefreshView extends ViewGroup implements OnDetectScrollListen
     private OnRefreshListener mRefreshLisenter;
 
     private AbsListView.OnScrollListener onScrollListener;
-    private OnDetectScrollListener onDetectScrollListener;
+    private final OnDetectScrollListener onDetectScrollListener;
 
     public enum State {
         NORMAL,
@@ -201,7 +201,6 @@ public class FriendRefreshView extends ViewGroup implements OnDetectScrollListen
             }
         });
 
-
     }
 
     @Override
@@ -259,15 +258,15 @@ public class FriendRefreshView extends ViewGroup implements OnDetectScrollListen
      * @return
      */
     private boolean shouldIntercept() {
-        if (bDraging) return true;
+        if (bDraging) {
+            return true;
+        }
         int childCount = mContentView.getChildCount();
         if (childCount > 0) {
             View firstChild = mContentView.getChildAt(0);
-            if (firstChild.getTop() >= 0
+            return firstChild.getTop() >= 0
                     && firstItem == 0 && currentTop == 0
-                    && bScrollDown) {
-                return true;
-            } else return false;
+                    && bScrollDown;
         } else {
             return true;
         }
@@ -282,10 +281,8 @@ public class FriendRefreshView extends ViewGroup implements OnDetectScrollListen
         int childCount = mContentView.getChildCount();
         if (childCount > 0) {
             View firstChild = mContentView.getChildAt(0);
-            if (firstChild.getTop() >= 0
-                    && firstItem == 0 && currentTop == 0) {
-                return true;
-            } else return false;
+            return firstChild.getTop() >= 0
+                    && firstItem == 0 && currentTop == 0;
         } else {
             return false;
         }
@@ -368,7 +365,6 @@ public class FriendRefreshView extends ViewGroup implements OnDetectScrollListen
         contentParams.top = 0;
     }
 
-
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         LayoutParams contentParams = (LayoutParams) mContentView.getLayoutParams();
@@ -439,7 +435,6 @@ public class FriendRefreshView extends ViewGroup implements OnDetectScrollListen
      */
     private class FriendRefreshListView extends ListView {
 
-
         public FriendRefreshListView(Context context) {
             this(context, null);
         }
@@ -466,8 +461,9 @@ public class FriendRefreshView extends ViewGroup implements OnDetectScrollListen
                 case MotionEvent.ACTION_DOWN:
                     int index = MotionEventCompat.getActionIndex(ev);
                     mActivePointerId = MotionEventCompat.getPointerId(ev, index);
-                    if (mActivePointerId == INVALID_POINTER)
+                    if (mActivePointerId == INVALID_POINTER) {
                         break;
+                    }
                     mLastMotionX = ev.getX();
                     mLastMotionY = ev.getY();
                     break;
@@ -510,7 +506,6 @@ public class FriendRefreshView extends ViewGroup implements OnDetectScrollListen
         return mState == State.REFRESHING;
     }
 
-
     Handler mHandler;
 
     public void startRefresh() {
@@ -541,6 +536,6 @@ public class FriendRefreshView extends ViewGroup implements OnDetectScrollListen
     }
 
     public interface OnRefreshListener {
-        public void onRefresh();
+        void onRefresh();
     }
 }

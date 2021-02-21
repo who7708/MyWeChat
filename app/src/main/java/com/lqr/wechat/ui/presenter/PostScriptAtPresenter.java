@@ -11,7 +11,6 @@ import com.lqr.wechat.util.UIUtils;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-
 public class PostScriptAtPresenter extends BasePresenter<IPostScriptAtView> {
 
     public PostScriptAtPresenter(BaseActivity context) {

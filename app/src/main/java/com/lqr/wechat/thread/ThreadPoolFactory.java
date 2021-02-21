@@ -1,6 +1,5 @@
 package com.lqr.wechat.thread;
 
-
 /**
  * @创建者 CSDN_LQR
  * @描述 线程池工厂

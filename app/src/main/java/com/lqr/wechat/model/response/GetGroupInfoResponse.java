@@ -8,7 +8,6 @@ import java.io.Serializable;
  */
 public class GetGroupInfoResponse {
 
-
     /**
      * code : 200
      * result : {"id":"HMo0KF3AS","name":"啦啦啦","portraitUri":"http://rongcloud-image.ronghub.com/image_jpeg__RC-0116-00-26_115_1453797774?e=2147483647&token=CddrKW5AbOMQaDRwc3ReDNvo3-sL_SO1fSUBKV3H:An7uUCZEfnKxDU2uISg9BOKLz_8=","memberCount":4,"creatorId":"7w0UxC8IB"}

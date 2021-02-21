@@ -111,8 +111,8 @@ public class ApiRetrofit extends BaseApiRetrofit {
 
     private RequestBody getRequestBody(Object obj) {
         String route = new Gson().toJson(obj);
-        RequestBody body=RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"),route);
-//        RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), route);
+        RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), route);
+        //        RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), route);
         return body;
     }
 
@@ -209,7 +209,6 @@ public class ApiRetrofit extends BaseApiRetrofit {
         return mApi.removeFromBlackList(getRequestBody(new RemoveFromBlacklistRequest(friendId)));
     }
 
-
     //群组
     public Observable<CreateGroupResponse> createGroup(String name, List<String> memberIds) {
         return mApi.createGroup(getRequestBody(new CreateGroupRequest(name, memberIds)));
@@ -250,9 +249,9 @@ public class ApiRetrofit extends BaseApiRetrofit {
     public Observable<QuitGroupResponse> dissmissGroup(String groupId) {
         return mApi.dissmissGroup(getRequestBody(new DismissGroupRequest(groupId)));
     }
-//    public Observable<DismissGroupResponse> dissmissGroup(String groupId) {
-//        return mApi.dissmissGroup(getRequestBody(new DismissGroupRequest(groupId)));
-//    }
+    //    public Observable<DismissGroupResponse> dissmissGroup(String groupId) {
+    //        return mApi.dissmissGroup(getRequestBody(new DismissGroupRequest(groupId)));
+    //    }
 
     public Observable<SetGroupDisplayNameResponse> setGroupDisplayName(String groupId, String displayName) {
         return mApi.setGroupDisplayName(getRequestBody(new SetGroupDisplayNameRequest(groupId, displayName)));

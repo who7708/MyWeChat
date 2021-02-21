@@ -5,11 +5,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 import com.lqr.wechat.R;
 
@@ -19,8 +20,8 @@ import com.lqr.wechat.R;
  */
 public class QuickIndexBar extends View {
 
-    private Paint mPaint;
-    private float mTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 14, getResources().getDisplayMetrics());
+    private final Paint mPaint;
+    private final float mTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 14, getResources().getDisplayMetrics());
     private static final String[] LETTERS = new String[]{
             "↑", "☆", "A", "B", "C", "D", "E", "F", "G", "H",
             "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
@@ -135,7 +136,7 @@ public class QuickIndexBar extends View {
                 setBackgroundColor(Color.TRANSPARENT);
                 break;
         }
-//        invalidate();//重新调用onDraw方法实现选中的字母更改颜色
+        //        invalidate();//重新调用onDraw方法实现选中的字母更改颜色
         return true;
     }
 }

@@ -1,7 +1,8 @@
 package com.lqr.wechat.db.model;
 
-import androidx.annotation.NonNull;
 import android.text.TextUtils;
+
+import androidx.annotation.NonNull;
 
 import org.litepal.crud.DataSupport;
 
@@ -177,11 +178,11 @@ public class Friend extends DataSupport implements Comparable<Friend> {
         if (o != null) {
             Friend friendInfo = (Friend) o;
             return (getUserId() != null && getUserId().equals(friendInfo.getUserId()));
-//            return (getUserId() != null && getUserId().equals(friendInfo.getUserId()))
-//                    && (getName() != null && getName().equals(friendInfo.getName()))
-//                    && (getPortraitUri() != null && getPortraitUri().equals(friendInfo.getPortraitUri()))
-//                    && (phoneNumber != null && phoneNumber.equals(friendInfo.getPhoneNumber()))
-//                    && (displayName != null && displayName.equals(friendInfo.getDisplayName()));
+            //            return (getUserId() != null && getUserId().equals(friendInfo.getUserId()))
+            //                    && (getName() != null && getName().equals(friendInfo.getName()))
+            //                    && (getPortraitUri() != null && getPortraitUri().equals(friendInfo.getPortraitUri()))
+            //                    && (phoneNumber != null && phoneNumber.equals(friendInfo.getPhoneNumber()))
+            //                    && (displayName != null && displayName.equals(friendInfo.getDisplayName()));
         } else {
             return false;
         }

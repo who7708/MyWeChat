@@ -46,7 +46,7 @@ public class BubbleImageView extends ImageView {
     private int mBitmapWidth;
     private int mBitmapHeight;
 
-    private Paint mPaint;
+    private final Paint mPaint;
     private int percent = 0;
     private boolean mShowText = true;//是否显示文字
     private boolean mShowShadow = true;//是否显示阴影
@@ -80,7 +80,6 @@ public class BubbleImageView extends ImageView {
         this.percent = percent;
         postInvalidate();
     }
-
 
     /**
      * 设置进度文字是否显示
@@ -163,7 +162,6 @@ public class BubbleImageView extends ImageView {
             //shadowRectF.set(0, 0, getWidth(), getHeight() - getHeight()* percent / 100 );
             canvas.drawRoundRect(shadowRectF, radiusPx, radiusPx, mPaint);
         }
-
 
         if (mShowText) {//是否画文字
             //画文字

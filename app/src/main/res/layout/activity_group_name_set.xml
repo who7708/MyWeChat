@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/include_toolbar"/>
+    <include layout="@layout/include_toolbar" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,7 +14,7 @@
         android:layout_marginTop="40px"
         android:text="@string/group_name"
         android:textColor="@color/gray1"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <EditText
         android:id="@+id/etName"
@@ -28,6 +27,6 @@
         android:drawableBottom="@drawable/shape_bottom_green"
         android:gravity="bottom"
         android:textColorHint="@color/gray3"
-        android:textSize="14sp"/>
+        android:textSize="14sp" />
 
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

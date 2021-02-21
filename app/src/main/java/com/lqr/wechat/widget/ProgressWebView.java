@@ -14,7 +14,7 @@ import com.lqr.wechat.R;
  */
 public class ProgressWebView extends WebView {
 
-    private ProgressBar mProgressBar;
+    private final ProgressBar mProgressBar;
 
     public ProgressWebView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -36,8 +36,9 @@ public class ProgressWebView extends WebView {
             if (newProgress == 100) {
                 mProgressBar.setVisibility(GONE);
             } else {
-                if (mProgressBar.getVisibility() == GONE)
+                if (mProgressBar.getVisibility() == GONE) {
                     mProgressBar.setVisibility(VISIBLE);
+                }
                 mProgressBar.setProgress(newProgress);
             }
             super.onProgressChanged(view, newProgress);

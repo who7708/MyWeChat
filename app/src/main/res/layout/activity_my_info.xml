@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray5"
     android:orientation="vertical">
 
-    <include layout="@layout/include_toolbar"/>
+    <include layout="@layout/include_toolbar" />
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40px"
         android:orientation="vertical">
 
-        <com.zhy.autolayout.AutoLinearLayout
+        <LinearLayout
             android:id="@+id/llHeader"
             android:layout_width="match_parent"
             android:layout_height="160px"
@@ -32,7 +31,7 @@
                 android:singleLine="true"
                 android:text="@string/header_pic"
                 android:textColor="@color/black0"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
 
             <ImageView
                 android:id="@+id/ivHeader"
@@ -41,14 +40,13 @@
                 android:layout_marginLeft="30px"
                 android:layout_marginRight="30px"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/default_header"/>
-        </com.zhy.autolayout.AutoLinearLayout>
+                android:src="@mipmap/default_header" />
+        </LinearLayout>
 
         <View
             style="@style/Line"
             android:layout_marginLeft="30px"
-            android:layout_marginRight="30px"
-            />
+            android:layout_marginRight="30px" />
 
         <com.lqr.optionitemview.OptionItemView
             android:id="@+id/oivName"
@@ -61,13 +59,12 @@
             app:right_text="CSDN_LQR"
             app:right_text_color="@color/gray2"
             app:right_text_margin_right="40px"
-            app:right_text_size="14sp"/>
+            app:right_text_size="14sp" />
 
         <View
             style="@style/Line"
             android:layout_marginLeft="30px"
-            android:layout_marginRight="30px"
-            />
+            android:layout_marginRight="30px" />
 
         <com.lqr.optionitemview.OptionItemView
             android:id="@+id/oivAccount"
@@ -80,13 +77,12 @@
             app:right_text="sky_lqr"
             app:right_text_color="@color/gray2"
             app:right_text_margin_right="40px"
-            app:right_text_size="14sp"/>
+            app:right_text_size="14sp" />
 
         <View
             style="@style/Line"
             android:layout_marginLeft="30px"
-            android:layout_marginRight="30px"
-            />
+            android:layout_marginRight="30px" />
 
         <com.lqr.optionitemview.OptionItemView
             android:id="@+id/oivQRCodeCard"
@@ -97,13 +93,12 @@
             app:left_text_margin_left="30px"
             app:left_text_size="16sp"
             app:right_image_margin_right="40px"
-            app:right_src="@mipmap/ic_qr_code"/>
+            app:right_src="@mipmap/ic_qr_code" />
 
         <View
             style="@style/Line"
             android:layout_marginLeft="30px"
-            android:layout_marginRight="30px"
-            />
+            android:layout_marginRight="30px" />
 
         <com.lqr.optionitemview.OptionItemView
             style="@style/OptionItem"
@@ -111,10 +106,10 @@
             app:left_text="@string/my_location"
             app:left_text_color="@color/black0"
             app:left_text_margin_left="30px"
-            app:left_text_size="16sp"/>
-    </com.zhy.autolayout.AutoLinearLayout>
+            app:left_text_size="16sp" />
+    </LinearLayout>
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40px"
@@ -131,13 +126,12 @@
             app:right_text=""
             app:right_text_color="@color/gray2"
             app:right_text_margin_right="40px"
-            app:right_text_size="14sp"/>
+            app:right_text_size="14sp" />
 
         <View
             style="@style/Line"
             android:layout_marginLeft="30px"
-            android:layout_marginRight="30px"
-            />
+            android:layout_marginRight="30px" />
 
         <com.lqr.optionitemview.OptionItemView
             style="@style/OptionItem"
@@ -145,13 +139,12 @@
             app:left_text="@string/area"
             app:left_text_color="@color/black0"
             app:left_text_margin_left="30px"
-            app:left_text_size="16sp"/>
+            app:left_text_size="16sp" />
 
         <View
             style="@style/Line"
             android:layout_marginLeft="30px"
-            android:layout_marginRight="30px"
-            />
+            android:layout_marginRight="30px" />
 
         <com.lqr.optionitemview.OptionItemView
             android:id="@+id/oivSignature"
@@ -164,8 +157,8 @@
             app:right_text="@string/not_fill"
             app:right_text_color="@color/gray2"
             app:right_text_margin_right="40px"
-            app:right_text_size="14sp"/>
+            app:right_text_size="14sp" />
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </LinearLayout>
 
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

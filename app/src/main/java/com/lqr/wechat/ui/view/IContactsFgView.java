@@ -1,6 +1,5 @@
 package com.lqr.wechat.ui.view;
 
-
 import android.view.View;
 import android.widget.TextView;
 

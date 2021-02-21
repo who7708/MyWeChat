@@ -2,7 +2,6 @@ package com.lqr.wechat.model.data;
 
 import com.lqr.wechat.model.response.GetGroupMemberResponse;
 
-
 public class GetGroupMemberModel {
     GetGroupMemberResponse mGetGroupMemberResponse;
     String mGroupId;

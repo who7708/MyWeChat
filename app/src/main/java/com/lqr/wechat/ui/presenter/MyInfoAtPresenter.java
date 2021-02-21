@@ -49,8 +49,9 @@ public class MyInfoAtPresenter extends BasePresenter<IMyInfoAtView> {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(qiNiuTokenResponse -> {
                     if (qiNiuTokenResponse != null && qiNiuTokenResponse.getCode() == 200) {
-                        if (mUploadManager == null)
+                        if (mUploadManager == null) {
                             mUploadManager = new UploadManager();
+                        }
                         File imageFile = new File(imageItem.path);
                         QiNiuTokenResponse.ResultEntity result = qiNiuTokenResponse.getResult();
                         String domain = result.getDomain();
@@ -93,8 +94,9 @@ public class MyInfoAtPresenter extends BasePresenter<IMyInfoAtView> {
     }
 
     private void uploadError(Throwable throwable) {
-        if (throwable != null)
+        if (throwable != null) {
             LogUtils.sf(throwable.getLocalizedMessage());
+        }
         mContext.hideWaitingDialog();
         UIUtils.showToast(UIUtils.getString(R.string.set_fail));
     }

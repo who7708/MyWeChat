@@ -277,7 +277,7 @@
     <string name="exit_app" translatable="false">关闭微信</string>
 
     <!--关于-->
-    <string name="app_name_in_about" translatable="false">高仿微信 6.5.7 (融云版)</string>
+    <string name="app_name_in_about" translatable="false">高仿微信 6.5.7</string>
     <string name="function_introduction" translatable="false">功能介绍</string>
     <string name="complaint" translatable="false">投诉</string>
     <string name="check_update" translatable="false">检查更新</string>

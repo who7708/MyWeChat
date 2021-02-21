@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoFrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/splash"
-    >
+    android:background="@mipmap/splash">
 
     <include
         layout="@layout/include_toolbar"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/rlButton"
@@ -27,7 +24,7 @@
             android:background="@drawable/shape_splash_login"
             android:text="@string/login"
             android:textColor="@color/white"
-            android:textSize="32px"/>
+            android:textSize="32px" />
 
         <Button
             android:id="@+id/btnRegister"
@@ -39,6 +36,6 @@
             android:layout_marginRight="40px"
             android:background="@drawable/shape_splash_register"
             android:text="@string/register"
-            android:textSize="32px"/>
+            android:textSize="32px" />
     </com.zhy.autolayout.AutoRelativeLayout>
 </com.zhy.autolayout.AutoFrameLayout>

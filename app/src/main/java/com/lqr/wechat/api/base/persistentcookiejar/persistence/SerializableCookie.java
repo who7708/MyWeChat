@@ -123,7 +123,7 @@ public class SerializableCookie implements Serializable {
         return data;
     }
 
-    private static long NON_VALID_EXPIRES_AT = -1L;
+    private static final long NON_VALID_EXPIRES_AT = -1L;
 
     private void writeObject(ObjectOutputStream out) throws IOException {
         out.writeObject(cookie.name());
@@ -153,14 +153,17 @@ public class SerializableCookie implements Serializable {
 
         builder.path((String) in.readObject());
 
-        if (in.readBoolean())
+        if (in.readBoolean()) {
             builder.secure();
+        }
 
-        if (in.readBoolean())
+        if (in.readBoolean()) {
             builder.httpOnly();
+        }
 
-        if (in.readBoolean())
+        if (in.readBoolean()) {
             builder.hostOnlyDomain(domain);
+        }
 
         cookie = builder.build();
     }
